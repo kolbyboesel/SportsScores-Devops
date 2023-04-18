@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "BcWge6Pt1JZUGlRrcRSm+jUVQNljmi6NWj7zh2j17HZU9z+/XbwjL+nqI2ZT0iFW2V2fcPvOSXyvKe5lHaeRuA==",
+  "success": true,
+  "projectFilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/MyTestWeb.csproj",
+  "expectedPackageFiles": [
+    "/Users/kolbyboesel/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/microsoft.netcore.app.ref/6.0.15/microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "/Users/kolbyboesel/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.15/microsoft.netcore.app.host.osx-arm64.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportsScores</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="~/MyTestWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
+      href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu">
+      < class="fa fa-bars"></>
+    </a>
+    <a href="/Index" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">Home</a>
+    <a href="/NFL" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">NFL</a>
+    <a href="/NBA" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">NBA</a>
+    <a href="/MLB" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">MLB</a>
+    <a href="/NHL" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      style="width: 13%; color: white">NHL</a>
+    <a onclick=loginOn() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      style="width: 10%; float: right; color: white">Sign Up</a>
+    <a onclick=loginOn() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      style="width: 10%; float: right; color: white">Log In</a>
+  </div>
+</div>
+</div>
+
+<div id="login">
+          <div class="parentContainer">
+            <div class="loginContainer"></div>
+            <input class="textBox" type="text" id="uname" name="uname" value="Username">
+            <input class="textBox" type="text" id="pword" name="pword" value="Password">
+            <input onclick=loginOff() class="exitButton" type="submit" value="Exit">
+            <input class="loginButton" type="submit" value="Log In">
+          </div>
+        </div>
+
+    <div class="container" style="width: 100%;">
+        <main role="main" style="width: 100%;">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color: white; position: fixed">
+        <div class="container">
+            &copy; 2023 - SportsScores - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
