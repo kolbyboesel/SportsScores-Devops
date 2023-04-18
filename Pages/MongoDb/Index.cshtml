@@ -2,20 +2,23 @@
 @model MyTestWeb.Pages.MongoDb.IndexModel
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportsScores</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="~/MyTestWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
 
-<div class="text-center">
-    <h1 class="display-4">Mongo Db Home</h1>
-    
-    <h5>FindOne API Call Results</h5>
-    <div>ID: @Html.DisplayTextFor(model => model.FindOneModel.Id)</div>
-    <div>LoginId: @Html.DisplayTextFor(model => model.FindOneModel.LoginId)</div>
-    <div>PasswordId: @Html.DisplayTextFor(model => model.FindOneModel.PasswordId)</div>
-    <p>&nbsp;</p>
-    <h5>Find API Call Results</h5>
-    @foreach (var item in Model.FindModel)
-    {
-        <div>ID: @Html.DisplayTextFor(modelItem => item.Id)</div>
-        <div>LoginId: @Html.DisplayTextFor(modelItem => item.LoginId)</div>
-        <div>PasswordId: @Html.DisplayTextFor(modelItem => item.PasswordId)</div>
-    }
-</div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -42,8 +42,11 @@ button.accept-policy[b-ai8n9lzflq] {
 
 .footer[b-ai8n9lzflq] {
   position: absolute;
+  height: 10%;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  color: black;
+  opacity: 0.5;
 }

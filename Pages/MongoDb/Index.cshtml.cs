@@ -44,7 +44,7 @@ public class IndexModel : PageModel
         {
             collection = "Login_Info",
             dataSource = "SportsScores",
-            database = "Login_Data"
+            database = "Login_Data",
         };
 
         var body = JsonSerializer.Serialize(requestModel);
@@ -52,4 +52,5 @@ public class IndexModel : PageModel
         var response = await client.PostAsync(request);
         return response;
     }
+
 }
