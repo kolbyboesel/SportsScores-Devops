@@ -27,38 +27,10 @@
       style="width: 10%; float: right; color: white; display: none">Account Home</a>
     <a id="id03" onclick=loginOn() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 10%; float: right; color: white">Sign Up</a>
-    <a id="id04" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+    <a id="id04" href="/MongoDb/Index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 10%; float: right; color: white">Log In</a>
   </div>
 </div>
-</div>
-
-<!-- The Modal -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
-
-  <!-- Modal Content -->
-  <form class="modal-content animate">
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" id="uname" runat="server" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" id="psw" runat="server" name="psw" required>
-
-      <button onclick=loginClicked()>Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
 </div>
 
     <div style="width: 100%; height: 100%;">
@@ -80,15 +52,6 @@ class="close" title="Close Modal">&times;</span>
     <script src="~/js/verifyUser.js" asp-append-version="true"></script>
 
     <script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 function loginClicked(){
   username = document.getElementById("uname").value;

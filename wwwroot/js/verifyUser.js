@@ -1,3 +1,6 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { MongoClient } = require('mongodb')
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 
 async function getUsers(username) {
@@ -17,7 +20,7 @@ async function getUsers(username) {
     }
     const user = await collection.findOne(query, options);
     return user;
-    
+  
   }
   finally{
     await client.close();
@@ -35,7 +38,4 @@ async function verifyUsers(username, password){
     if(user.LoginID == username && user.PasswordID == password){
         return true;
     }
-    return false;
 }
-
-console.log(verifyUsers("kolbyboesel", "Kolby344"));

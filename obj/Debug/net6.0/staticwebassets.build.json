@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kNhenfrnGVoQod4FxS+Of+Ox9Prrck4hW2mdba26/F4=",
+  "Hash": "YmHTLbX3wxL5FxxeS09QyFW6s+PgXTefBwmHytnUXbw=",
   "Source": "MyTestWeb",
   "BasePath": "_content/MyTestWeb",
   "Mode": "Default",
@@ -287,40 +287,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/nbaNews.js"
-    },
-    {
-      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package-lock.json",
-      "SourceId": "MyTestWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
-      "BasePath": "_content/MyTestWeb",
-      "RelativePath": "js/package-lock.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/package-lock.json"
-    },
-    {
-      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package.json",
-      "SourceId": "MyTestWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
-      "BasePath": "_content/MyTestWeb",
-      "RelativePath": "js/package.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/package.json"
     },
     {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/scoreboard.js",

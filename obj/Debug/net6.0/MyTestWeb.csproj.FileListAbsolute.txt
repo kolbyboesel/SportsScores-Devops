@@ -96,3 +96,5 @@
 /Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/obj/Debug/net6.0/MyTestWeb.pdb
 /Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/obj/Debug/net6.0/MyTestWeb.genruntimeconfig.cache
 /Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/obj/Debug/net6.0/ref/MyTestWeb.dll
+/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/bin/Debug/net6.0/package-lock.json
+/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/bin/Debug/net6.0/package.json

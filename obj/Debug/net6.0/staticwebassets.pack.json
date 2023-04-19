@@ -61,14 +61,6 @@
       "PackagePath": "staticwebassets/js/nbaNews.js"
     },
     {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package-lock.json",
-      "PackagePath": "staticwebassets/js/package-lock.json"
-    },
-    {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package.json",
-      "PackagePath": "staticwebassets/js/package.json"
-    },
-    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/scoreboard.js",
       "PackagePath": "staticwebassets/js/scoreboard.js"
     },
