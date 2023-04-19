@@ -5,10 +5,11 @@ using RestSharp;
 
 namespace MyTestWeb.Pages.MongoDb;
 
-public class IndexModel : PageModel
+public class LoginModel : PageModel
 {
     public LoginInfoResponseModel FindOneModel { get; set; }
     public List<LoginInfoResponseModel> FindModel { get; set; }
+
 
     public async Task OnGet()
     {
@@ -53,4 +54,27 @@ public class IndexModel : PageModel
         return response;
     }
 
+     public async Task OnPostAsync()
+    {
+        var username = Request.Form["uname"];
+        var password = Request.Form["psw"];
+
+        // Retrieve the user's data from MongoDB
+        var client = new RestClient("https://eastus2.azure.data.mongodb-api.com/app/data-sdfbt/endpoint/data/v1/action/find");
+        var response = await GetData(client);
+        var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
+
+        
+
+        foreach(var user in users.Documents){
+            if((user.LoginId == username) && (user.PasswordId == password)){
+
+                Response.Redirect("/AccountHome");
+            }
+        }
+        ViewData["ErrorMessage"] = "Invalid username or password";
+
+    }
+
 }
+

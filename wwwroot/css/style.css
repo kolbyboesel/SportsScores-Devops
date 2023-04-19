@@ -3,6 +3,22 @@ form {
   border: 3px solid #f1f1f1;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
   width: 100%;
@@ -37,6 +53,19 @@ button:hover {
   background-color: #f44336;
 }
 
+.cancelSignup {
+  padding: 14px 20px;
+  background-color: #f44336;
+  float: left;
+  width: 50%;
+}
+
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+
 /* Center the avatar image inside this container */
 .imgcontainer {
   text-align: center;
@@ -66,7 +95,7 @@ span.psw {
     display: block;
     float: none;
   }
-  .cancelbtn {
+  .cancelbtn .signupbtn {
     width: 100%;
   }
 }

@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="~/MyTestWeb.styles.css" asp-append-version="true" />
 </head>
+<script>
+  var LoginBtn = document.getElementById("LoginBtn");
+  var SignupBtn = document.getElementById("SignupBtn");
+  var AccountHomeBtn = document.getElementById("AccountHomeBtn");
+
+    if (@User.Identity.IsAuthenticated.ToString().ToLower()) {
+        LoginBtn.style.display = "none";
+        SignupBtn.style.display = "none";
+        AccountHomeBtn.style.display = "block";
+    }
+
+
+</script>
 <body>
     <div class="w3-top">
   <div class="w3-bar w3-black w3-card w3-left-align w3-large">
@@ -23,11 +36,11 @@
     <a href="/MLB" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">MLB</a>
     <a href="/NHL" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 13%; color: white">NHL</a>
-    <a id="id02" href="/MongoDb/Index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+      <a id="AccountHomeBtn" href="/AccountHome" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 10%; float: right; color: white; display: none">Account Home</a>
-    <a id="id03" onclick=loginOn() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+    <a id="LoginBtn" href="/MongoDb/Signup" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 10%; float: right; color: white">Sign Up</a>
-    <a id="id04" href="/MongoDb/Index" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+    <a id="SignupBtn" href="/MongoDb/Login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
       style="width: 10%; float: right; color: white">Log In</a>
   </div>
 </div>

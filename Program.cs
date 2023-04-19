@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 namespace MyTestWeb;
 
 static class Program
@@ -8,6 +9,7 @@ static class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
         var app = builder.Build();
 
@@ -25,8 +27,10 @@ static class Program
         app.UseRouting();
 
         app.UseAuthorization();
+        app.UseAuthentication();
 
         app.MapRazorPages();
+        app.MapDefaultControllerRoute();
 
         app.Run();
     }
