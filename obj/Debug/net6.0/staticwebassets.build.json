@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K1vhpAFTTNIQJrEUv1db431dvE1aCsEdSOIFCYzI8xw=",
+  "Hash": "a7z//NiPtey2lJNClaDSkC5NOxPgQ1KBqGt8P8YvS/w=",
   "Source": "MyTestWeb",
   "BasePath": "_content/MyTestWeb",
   "Mode": "Default",
@@ -338,23 +338,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/showLoginPage.js"
-    },
-    {
-      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/site.js",
-      "SourceId": "MyTestWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
-      "BasePath": "_content/MyTestWeb",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

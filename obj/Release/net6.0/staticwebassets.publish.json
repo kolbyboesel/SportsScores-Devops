@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ebaZo5WEOuQpRjRD+LLXBO5TZ0+5h8777zHo1/hDtt8=",
+  "Hash": "R3QqjuLRpaB2vNPMcP7fJV0ZrP/PYYUhQlkn/PGnwZw=",
   "Source": "MyTestWeb",
   "BasePath": "_content/MyTestWeb",
   "Mode": "Default",
@@ -289,6 +289,23 @@
       "OriginalItemSpec": "wwwroot/js/nbaNews.js"
     },
     {
+      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package.json",
+      "SourceId": "MyTestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
+      "BasePath": "_content/MyTestWeb",
+      "RelativePath": "js/package.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/package.json"
+    },
+    {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/scoreboard.js",
       "SourceId": "MyTestWeb",
       "SourceType": "Discovered",
@@ -321,23 +338,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/showLoginPage.js"
-    },
-    {
-      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/site.js",
-      "SourceId": "MyTestWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
-      "BasePath": "_content/MyTestWeb",
-      "RelativePath": "js/site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

@@ -64,8 +64,6 @@ public class LoginModel : PageModel
         var response = await GetData(client);
         var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
 
-        
-
         foreach(var user in users.Documents){
             if((user.LoginId == username) && (user.PasswordId == password)){
 

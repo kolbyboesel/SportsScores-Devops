@@ -73,10 +73,6 @@
       "PackagePath": "staticwebassets/js/showLoginPage.js"
     },
     {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/site.js",
-      "PackagePath": "staticwebassets/js/site.js"
-    },
-    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/lib/bootstrap/LICENSE",
       "PackagePath": "staticwebassets/lib/bootstrap"
     },
