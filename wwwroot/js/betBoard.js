@@ -113,8 +113,8 @@ function generateOddsBoard(currentGame) {
   htmlSegment += `<div class="header">
         <div class="headerDate">Date: ${completedDate}</div>
         <div class="headerElement">Spread</div>
-        <div class="headerElement">Over/Under</div>
-        <div class="headerElement">Moneyline</div>
+        <div class="headerElement">O/U</div>
+        <div class="headerElement">ML</div>
       </div>
       <div class="team win">
         <div class="betteam">${currentGame.away_team}</div>

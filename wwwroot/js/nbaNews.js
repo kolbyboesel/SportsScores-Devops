@@ -29,7 +29,7 @@ async function buildNBAHomepage(allNews, containerName) {
   clear(containerName);
 
   let html =
-    '<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 40px; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click Any Of The Boxes Below To View The Latest Stories!</div>';
+    '<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click Any Of The Boxes Below To View The Latest Stories!</div>';
   allNews.forEach((currentGame) => {
     let newsTitle = currentGame.title;
     let url = currentGame.url;

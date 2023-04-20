@@ -125,23 +125,29 @@ function generateScoreboard(
   }
 
   if (winningTeam === currentScore.away_team) {
-    htmlSegment += `<div class="date">${dateTimeValue}</div>
+    htmlSegment += `<div class="header">
+    <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
+    <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%"">${gameStatus}</div>
+  </div>
       <div class="team win">
         <div class="team">${currentScore.away_team}</div>
         <div class="score">${awayScore}</div>
       </div>
-      <div class="divider"><p>${gameStatus}</p></div>
+      <div class="divider w3-mobile"></div>
       <div class="team lose">
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>
       </div>`;
   } else {
-    htmlSegment += `<div class="date">${dateTimeValue}</div>
+    htmlSegment += `<div class="header">
+    <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
+    <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%">${gameStatus}</div>
+  </div>
       <div class="team lose">
         <div class="team">${currentScore.away_team}</div>
         <div class="score">${awayScore}</div>
       </div>
-      <div class="divider"><p>${gameStatus}</p></div>
+      <div class="divider"></div>
       <div class="team win">
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>
