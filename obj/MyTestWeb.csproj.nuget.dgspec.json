@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/MyTestWeb.csproj": {}
+    "/Users/kboesel/Temp/kolbyboesel.github.io/MyTestWeb.csproj": {}
   },
   "projects": {
-    "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/MyTestWeb.csproj": {
+    "/Users/kboesel/Temp/kolbyboesel.github.io/MyTestWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/MyTestWeb.csproj",
+        "projectUniqueName": "/Users/kboesel/Temp/kolbyboesel.github.io/MyTestWeb.csproj",
         "projectName": "MyTestWeb",
-        "projectPath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/MyTestWeb.csproj",
-        "packagesPath": "/Users/kolbyboesel/.nuget/packages/",
-        "outputPath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/obj/",
+        "projectPath": "/Users/kboesel/Temp/kolbyboesel.github.io/MyTestWeb.csproj",
+        "packagesPath": "/Users/kboesel/.nuget/packages/",
+        "outputPath": "/Users/kboesel/Temp/kolbyboesel.github.io/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/kolbyboesel/.nuget/NuGet/NuGet.Config"
+          "/Users/kboesel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -57,25 +57,10 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -84,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
