@@ -226,11 +226,11 @@ body {
 }
 
 .outer {
-  width: 30%;
+  width: 96%;
   height: 170px;
   border: 10px solid rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  margin: 1.5%;
+  margin: 2%;
   align-items: right;
   display: inline-block;
 }
@@ -343,7 +343,7 @@ body {
   width: 100%;
   display: flex;
   background: white;
-  font-size: 10px;
+  font-size:small;
   align-items: center;
   justify-content: center;
   padding-left: 10px;
@@ -355,7 +355,7 @@ body {
   width: 100%;
   display: flex;
   background: white;
-  font-size: 13px;
+  font-size: small;
   align-items: center;
   justify-content: center;
   padding-left: 10px;
@@ -408,7 +408,7 @@ body {
   height: 40%;
   display: flex;
   align-items: center;
-  font-size: 10pt;
+  font-size: medium;
   color: white;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -419,7 +419,7 @@ body {
   height: 100%;
   display: flex;
   align-items: right;
-  font-size: 10pt;
+  font-size: medium;
   color: black;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -430,7 +430,7 @@ body {
   height: 200px;
   display: inline-block;
   align-items: center;
-  font-size: 10pt;
+  font-size: large;
   color: white;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -442,7 +442,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14pt;
+  font-size: large;
   color: white;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -453,7 +453,7 @@ body {
   display: inline-flex;
   align-items: left;
   justify-content: left;
-  font-size: 14pt;
+  font-size: large;
   color: white;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -464,7 +464,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: right;
-  font-size: 14pt;
+  font-size: large;
   color: white;
   letter-spacing: 1px;
   padding-right: 15px;
@@ -474,7 +474,7 @@ body {
   height: 40%;
   display: flex;
   align-items: center;
-  font-size: 14pt;
+  font-size: medium;
   color: white;
   letter-spacing: 1px;
   padding-left: 10px;
@@ -519,10 +519,9 @@ body {
   width: 80%;
   padding-right: 5%;
   padding-left: 5%;
-
   display: inline-block;
   text-align: right;
-  font-size: large;
+  font-size:medium;
   justify-content: right;
   align-items: right;
   letter-spacing: 2px;
@@ -572,14 +571,14 @@ body {
   flex-shrink: 0;
   width: 40%;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   margin: 30px;
   letter-spacing: 2px;
 }
 
 .divider {
   height: 1px;
-  width: 100%;
+  width: 96%;
   position: absolute;
   margin-left: 0px;
   font-size: 10pt;
@@ -609,25 +608,26 @@ body {
   display: inline-block;
   position: absolute;
   height: 1px;
-  width: 22%;
+  width: 70%;
   background-color: #746f7f;
 }
+
 .divider::after {
   content: "";
   display: inline-block;
   position: absolute;
   height: 1px;
-  width: 10px;
-  right: 0;
-  top: 0;
+  width: 20%;
   background-color: #746f7f;
 }
+
 .divider p {
   font-weight: bold;
   position: absolute;
-  left: 23.75%;
-  bottom: -23px;
+  left: 72%;
+  bottom: -20px;
 }
+
 .win .score {
   color: #eabf4f;
 }

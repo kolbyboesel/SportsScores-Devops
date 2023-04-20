@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SportsScores</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -27,17 +26,17 @@
 <body>
 
 <nav class="navbar navbar-inverse w3-black" style="position: fixed; width: 100%">
-  <div class="container-fluid w3-black" style="display: inline-block;">
-    <div class="navbar-header w3-black" style="display: flex">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  <div class="container-fluid" style="display: table;">
+    <div class="navbar-header" style="width=100%">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width: auto;">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
       <a class="navbar-brand" href="#">Sports Scores</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar" style="display: inline-block;">
-      <ul class="nav navbar-nav" style="display: inline-block;">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="display: block;">
         <li><a href="/Index">Home</a></li>
         <li><a href="/NBA">NBA</a></li>
         <li><a href="/MLB">MLB</a></li>
@@ -45,7 +44,7 @@
         <li><a href="/NFL">NFL</a></li>
 
       </ul>
-      <ul class="nav navbar-nav navbar-right" style="display: inline-block;">
+      <ul class="nav navbar-nav navbar-right" style="display: block;">
         <li><a href="/MongoDb/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="/MongoDb/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>

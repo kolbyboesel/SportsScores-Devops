@@ -16,6 +16,10 @@
     <script src="~/js/betBoard.js" asp-append-version="true"></script>
     <script src="~/js/bestBets.js" asp-append-version="true"></script>
     <script src="~/js/kolbysBets.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -24,24 +28,19 @@
           style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">NFL</h1>
         </header>
 
-        <div class="w3" width=100%>
-          <div class="w3-bar w3-red w3-card w3-large" width=100%>
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-              href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                class="fa fa-bars"></i></a>
-            <a onclick=clearNBA() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+          <div class="w3-bar w3-red" width=100%>
+            <a onclick=clearNBA() class="w3-bar-item w3-button w3-mobile w3-hover-white"
               style="width: 20%;">Home</a>
-            <a onclick=showNFLScores() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            <a onclick=showNFLScores() class="w3-bar-item w3-button w3-mobile w3-hover-white"
               style="width: 20%;">Today's Scores</a>
-            <a onclick=showNFLOdds() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            <a onclick=showNFLOdds() class="w3-bar-item w3-button w3-mobile w3-hover-white"
               style="width: 20%;">Betting Odds</a>
-            <a onclick=showNFLBets() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            <a onclick=showNFLBets() class="w3-bar-item w3-button w3-mobile w3-hover-white"
               style="width: 20%;">Best Bets</a>
-            <a onclick=showKolbysNFL() class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+            <a onclick=showKolbysNFL() class="w3-bar-item w3-button w3-mobile w3-hover-white"
               style="width: 20%;">Kolby's Bets of the Day</a>
 
           </div>
-        </div>
 
         <div id="login">
           <div class="parentContainer">
