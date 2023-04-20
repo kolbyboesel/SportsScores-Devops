@@ -5,46 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SportsScores</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="~/MyTestWeb.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<script>
-  var LoginBtn = document.getElementById("LoginBtn");
-  var SignupBtn = document.getElementById("SignupBtn");
-  var AccountHomeBtn = document.getElementById("AccountHomeBtn");
 
-    if (@User.Identity.IsAuthenticated.ToString().ToLower()) {
-        LoginBtn.style.display = "none";
-        SignupBtn.style.display = "none";
-        AccountHomeBtn.style.display = "block";
-    }
-
-
-</script>
 <body>
-    <div class="w3-top">
-  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-      href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu">
-      < class="fa fa-bars"></>
-    </a>
-    <a href="/Index" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">Home</a>
-    <a href="/NFL" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">NFL</a>
-    <a href="/NBA" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">NBA</a>
-    <a href="/MLB" class="w3-bar-item w3-button w3-padding-large w3-hover-white" style="width: 13%; color: white">MLB</a>
-    <a href="/NHL" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-      style="width: 13%; color: white">NHL</a>
-      <a id="AccountHomeBtn" href="/AccountHome" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-      style="width: 10%; float: right; color: white; display: none">Account Home</a>
-    <a id="LoginBtn" href="/MongoDb/Signup" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-      style="width: 10%; float: right; color: white">Sign Up</a>
-    <a id="SignupBtn" href="/MongoDb/Login" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
-      style="width: 10%; float: right; color: white">Log In</a>
+
+<nav class="navbar navbar-inverse w3-black" style="position: fixed; width: 100%">
+  <div class="container-fluid w3-black" style="display: inline-block;">
+    <div class="navbar-header w3-black">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Sports Scores</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" style="display: inline-block;">
+        <li><a href="/Index">Home</a></li>
+        <li><a href="/NBA">NBA</a></li>
+        <li><a href="/MLB">MLB</a></li>
+        <li><a href="/NHL">NHL</a></li>
+        <li><a href="/NFL">NFL</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="display: inline-block;">
+        <li><a href="/MongoDb/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/MongoDb/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
   </div>
-</div>
-</div>
+</nav>
 
     <div style="width: 100%; height: 100%;">
         <main role="main" style="width: 100%;">
@@ -60,27 +54,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
-
-    <script>
-
-function loginClicked(){
-  username = document.getElementById("uname").value;
-  password = document.getElementById("psw").value;
-  if(verifyUser(username, password) === true){
-    var modal = document.getElementById('id01');
-    modal.style.display = "none";
-    var acountHomeBtn = document.getElementById('id02');
-    acountHomeBtn.style.display = "block";
-    var signUpBtn = document.getElementById('id03');
-    signUpBtn.style.display = "none";
-    var loginBtn = document.getElementById('id04');
-    loginBtn.style.display = "none";
-  }
-}
-</script>
-
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
