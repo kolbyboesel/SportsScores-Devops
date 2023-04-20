@@ -59,7 +59,9 @@ async function buildNBAHomepage(allNews, containerName) {
 }
 
 function generateNBAHomepage(newsTitle, url, img) {
-  let htmlSegment = `<a class="sportsLink" href="${url}"><div class="outerNews"><div class="sportsNews"`;
+  let htmlSegment = `<a class="sportsLink mobileScreen" href="${url}">
+                      <div class="outerNews">
+                        <div class="sportsNews"`;
 
   htmlSegment += `
       <div class="article">

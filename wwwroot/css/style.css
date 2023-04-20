@@ -1,3 +1,9 @@
+@media screen and (max-width: 400px) {
+  .mobileScreen{
+    width: 96%!important;
+}
+}
+
 /* Bordered form */
 form {
   border: 3px solid #f1f1f1;
@@ -530,7 +536,7 @@ body {
   padding-left: 5%;
   display: inline-block;
   text-align: right;
-  font-size:1.5vh;
+  font-size:2vh;
   justify-content: right;
   align-items: right;
   letter-spacing: 2px;
