@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a7z//NiPtey2lJNClaDSkC5NOxPgQ1KBqGt8P8YvS/w=",
+  "Hash": "4X9YYuW/kvwWb/KSt7f0o8Xn6QC1I2rmxwc2JzEFhLw=",
   "Source": "MyTestWeb",
   "BasePath": "_content/MyTestWeb",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/espnLogo.png"
+    },
+    {
+      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/mlbLogo.png",
+      "SourceId": "MyTestWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
+      "BasePath": "_content/MyTestWeb",
+      "RelativePath": "images/mlbLogo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/mlbLogo.png"
     },
     {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/nbaLogo.png",

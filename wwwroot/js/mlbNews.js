@@ -50,7 +50,7 @@ function generateMLBHomepage(newsTitle, url, img) {
 
   htmlSegment += `
       <div class="article">
-        <div class="sourceLogo"><img class="imageStyle" src="${img}"></img></div>
+        <div class="sourceLogo"><img class="imageStyle" src="/images/mlbLogo.png"></img></div>
         <div class="newsTitle">${newsTitle}</div>
       </div>`;
   htmlSegment += `

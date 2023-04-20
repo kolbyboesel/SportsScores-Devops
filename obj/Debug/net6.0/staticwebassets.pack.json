@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets/images/espnLogo.png"
     },
     {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/mlbLogo.png",
+      "PackagePath": "staticwebassets/images/mlbLogo.png"
+    },
+    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/nbaLogo.png",
       "PackagePath": "staticwebassets/images/nbaLogo.png"
     },
