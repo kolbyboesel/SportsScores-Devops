@@ -100,7 +100,7 @@ async function buildScoreboard(allScores, containerName) {
 function formatDate(rawDate) {
   let dateTimeValue = Date.parse(rawDate);
   let dateRaw = new Date(dateTimeValue);
-
+  
   return (
     dateRaw.toLocaleDateString() +
     " Start Time: " +
