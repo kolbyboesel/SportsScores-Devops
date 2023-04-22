@@ -54,7 +54,7 @@ public class LoginModel : PageModel
         return response;
     }
 
-     public async Task OnPostAsync()
+    public async Task OnPostAsync()
     {
         var username = Request.Form["uname"];
         var password = Request.Form["psw"];
@@ -64,8 +64,10 @@ public class LoginModel : PageModel
         var response = await GetData(client);
         var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
 
-        foreach(var user in users.Documents){
-            if((user.LoginId == username) && (user.PasswordId == password)){
+        foreach (var user in users.Documents)
+        {
+            if ((user.LoginId == username) && (user.PasswordId == password))
+            {
 
                 Response.Redirect("/AccountHome");
             }

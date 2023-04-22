@@ -1,228 +1,4 @@
-@media screen and (max-width: 600px) {
-  .mobileScreen{
-    width: 96%!important;
-}
-}
-
-/* Bordered form */
-form {
-  border: 3px solid #f1f1f1;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  color: white;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.cancelSignup {
-  padding: 14px 20px;
-  background-color: #f44336;
-  float: left;
-  width: 50%;
-}
-
-.signupbtn {
-  float: left;
-  width: 50%;
-}
-
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-}
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn .signupbtn {
-    width: 100%;
-  }
-}
-
-/* The Modal (background) */
-.modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5px auto; /* 15% from the top and centered */
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  /* Position it in the top right corner outside of the modal */
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-/* Close button on hover */
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-
-.loginContainer {
-  display: inline;
-  width: 90%;
-  height: 90%;
-  padding-left: 5%;
-  padding-top: 5%;
-}
-.parentContainer {
-  width: 30%;
-  height: 22%;
-  margin: auto;
-  display: inline;
-  background-color: black;
-  border-width: 10px;
-  border-style: solid;
-  border-radius: 10px;
-  border-color: white;
-}
-
-.textBox {
-  width: 90%;
-  height: 30px;
-  float: left;
-  margin-left: 5%;
-  margin-top: 3%;
-  margin-bottom: 3%;
-}
-
-.loginButton {
-  float: right;
-  text-align: center;
-  width: 15%;
-  margin-right: 5%;
-  margin-top: 3%;
-}
-
-.exitButton {
-  width: 15%;
-  text-align: center;
-  float: left;
-  margin-left: 5%;
-  margin-top: 3%;
-}
-
-#login {
-  margin: 0 auto;
-  align-items: center;
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
-
+/*General body style*/
 body {
   height: 100vh;
   display: flex;
@@ -231,190 +7,39 @@ body {
   font-family: Oxygen, sans-serif;
 }
 
-.outer {
-  width: 96%;
-  height: 170px;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  margin: 2%;
-  align-items: right;
-  display: inline-block;
-}
-
-.outerNews {
-  width: 100%;
-  height: 200px;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  align-items: right;
-  display: flex;
-}
-
-.sportsNews {
-  width: 100%;
-  border-style: hidden;
-  border-width: 20px;
-  height: 100%;
-  overflow:auto;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(-60deg, #ffffff 53%, #f0ecec 53%);
-  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.sportsLink {
-  width: 45%;
-  height: 200px;
-  margin: 2.5%;
-  display: inline-block;
-}
-
-.kolbyPicksFullCont {
-  width: 100%;
-  height: 100vh;
-  display: inline-block;
-}
-
-.outerKolbysPicks {
-  display: inline-block;
-  width: 96%;
-  height: 100px;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  margin: 2%;
-  align-items: right;
-}
-
-.outerBetBoard {
-  width: 96%;
-  height: 220px;
-  margin: 2%;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.outerBestBets {
-  width: 90%;
-  height: 200px;
-  margin: 5%;
-  border: 10px solid rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.scoreboard {
-  width: 100%;
-  display: inline-block;
-  border-style: hidden;
-  border-width: 20px;
-  height: 150px;
-  align-items: center;
-  background: linear-gradient(-60deg, #46404f 53%, #4b4452 53%);
-  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.kolbysPicks {
-  width: 100%;
-  display: flex;
-  border-style: hidden;
-  border-width: 20px;
-  height: 100%;
-  align-items: center;
-  background: linear-gradient(-60deg, #46404f 53%, #4b4452 53%);
-  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.betBoard {
-  width: 100%;
-  border-style: hidden;
-  border-width: 20px;
-  height: 100%;
-  align-items: center;
-  background: linear-gradient(-60deg, #46404f 53%, #4b4452 53%);
-  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
-.bestBets {
-  width: 100%;
-  border-style: hidden;
-  border-width: 20px;
-  height: 100%;
-  align-items: center;
-  background: linear-gradient(-60deg, #46404f 53%, #4b4452 53%);
-  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
 .date {
   height: 20%;
   width: 100%;
   display: flex;
   background: white;
-  font-size:small;
+  font-size: small;
   align-items: center;
   justify-content: center;
   padding-left: 10px;
   letter-spacing: 1px;
 }
 
-.header {
-  height: 20%;
-  width: 100%;
+.footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 8%;
+  vertical-align: middle;
   display: flex;
-  background: white;
-  font-size: 1.5vh;
   align-items: center;
-  justify-content: center;
-  padding-left: 10px;
-  letter-spacing: 1px;
 }
 
-.headerDate {
-  border-width: 1px;
-  display: flex;
-  font-size: 1.5vh;
-  border-color: black;
-  width: 40%;
-  height: 100%;
-  align-items: center;
-  overflow: hidden;
-  flex-shrink: 0;
-  justify-content: left;
-  letter-spacing: 2px;
-  padding-left: 10px;
+.footerText {
+  text-align: center;
+  color: white;
+  width:100%;
+  margin:auto;
+  padding-left:5%;
+  float:left;
 }
 
-.headerElement {
-  border-width: 1px;
-  display: flex;
-  font-size: 1.5vh;
-  border-color: black;
-  width: 20%;
-  flex-shrink: 0;
-  justify-content: center;
-  letter-spacing: 2px;
-}
-
-.headerElement-team {
-  border-width: 1px;
-  display: flex;
-  border-color: black;
-  width: 40%;
-  flex-shrink: 0;
-  justify-content: left;
-  letter-spacing: 2px;
-}
-
-.headerElement-best {
-  border-width: 1px;
-  display: flex;
-  border-color: black;
-  width: 30%;
-  flex-shrink: 0;
-  justify-content: center;
-  letter-spacing: 2px;
-}
-
+/*General style for score and bet containers across the site*/
 .team {
   width: 100%;
   height: 40%;
@@ -426,163 +51,6 @@ body {
   padding-left: 10px;
 }
 
-.article {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  align-items: right;
-  font-size: medium;
-  color: black;
-  letter-spacing: 1px;
-  padding-left: 10px;
-}
-
-.pick {
-  width: 100%;
-  height: 200px;
-  display: inline-block;
-  align-items: center;
-  font-size: large;
-  color: white;
-  letter-spacing: 1px;
-  padding-left: 10px;
-}
-
-.pickNo {
-  width: 5%;
-  height: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5vh;
-  color: white;
-  letter-spacing: 1px;
-  padding-left: 10px;
-}
-.pickName {
-  width: 55%;
-  height: 100%;
-  display: inline-flex;
-  align-items: left;
-  justify-content: left;
-  font-size: 1.5vh;
-  color: white;
-  letter-spacing: 1px;
-  padding-left: 10px;
-}
-.pickLine {
-  width: 30%;
-  height: 150px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: right;
-  font-size: 1.5vh;
-  color: white;
-  letter-spacing: 1px;
-  padding-right: 15px;
-}
-.betteam {
-  width: 40%;
-  height: 40%;
-  display: flex;
-  align-items: center;
-  font-size: 1.5vh;
-  color: white;
-  letter-spacing: 1px;
-  padding-left: 10px;
-}
-
-.betTeamElement {
-  flex-shrink: 0;
-  width: 20%;
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  letter-spacing: 1px;
-  overflow:hidden;
-}
-
-.bestBetTeam {
-  flex-shrink: 0;
-  width: 40%;
-  display: flex;
-  font-size: 1.5vh;
-  justify-content: left;
-  letter-spacing: 2px;
-}
-
-.imageStyle {
-  display: flex;
-  margin: 10%;
-  height: auto;
-  width: 100%;
-  justify-content: left;
-  position: relative;
-  align-items: center;
-}
-.sourceLogo {
-  flex-shrink: 0;
-  width: 20%;
-  height: 100%;
-  display: flex;
-  justify-content: left;
-  letter-spacing: 2px;
-  align-items: center;
-}
-
-.newsTitle {
-  width: 80%;
-  padding-right: 5%;
-  padding-left: 5%;
-  display: inline-block;
-  text-align: right;
-  font-size:2vh;
-  justify-content: right;
-  align-items: right;
-  letter-spacing: 2px;
-}
-
-.bestBetElement {
-  flex-shrink: 0;
-  width: 30%;
-  font-size:1.5vh;
-  display: flex;
-  justify-content: center;
-  letter-spacing: 2px;
-}
-
-.betteam .overunder {
-  border-width: 1px;
-  border-color: black;
-  width: 33%;
-  display: flex;
-  justify-content: right;
-  letter-spacing: 2px;
-}
-
-.betteam .moneyline {
-  width: 33%;
-  flex-shrink: 0;
-  display: flex;
-
-  justify-content: right;
-  letter-spacing: 2px;
-}
-
-.team .rank {
-  height: 100%;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16pt;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-.team .logo {
-  width: 30px;
-  margin: 25px;
-}
 .team .score {
   flex-shrink: 0;
   width: 5%;
@@ -590,58 +58,6 @@ body {
   justify-content: center;
   margin: 10%;
   letter-spacing: 2px;
-}
-
-.divider {
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  margin-left: 0px;
-  font-size: 10pt;
-  color: white;
-}
-
-.betdivider {
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  margin-left: 0px;
-  font-size: 10pt;
-  color: white;
-}
-
-.betdivider::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  height: 1px;
-  width: 94.5%;
-  background-color: #746f7f;
-}
-
-.divider::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  height: 1px;
-  width: 94.5%;
-  background-color: #746f7f;
-}
-
-.divider::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  height: 1px;
-  width: 0px;
-  background-color: #746f7f;
-}
-
-.divider p {
-  font-weight: bold;
-  position: absolute;
-  left: 72%;
-  bottom: -20px;
 }
 
 .win .score {
@@ -658,4 +74,10 @@ body {
 
 .lose .team {
   color: white;
+}
+
+.divider{
+  border-bottom:gray;
+  border-width: 1px;
+  border-style:solid;
 }

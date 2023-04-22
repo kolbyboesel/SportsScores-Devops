@@ -5,8 +5,32 @@
       "PackagePath": "staticwebassets/MyTestWeb.bundle.scp.css"
     },
     {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/site.css",
-      "PackagePath": "staticwebassets/css/site.css"
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/account.css",
+      "PackagePath": "staticwebassets/css/account.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/bestBet.css",
+      "PackagePath": "staticwebassets/css/bestBet.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/betBoard.css",
+      "PackagePath": "staticwebassets/css/betBoard.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/kolbyPicks.css",
+      "PackagePath": "staticwebassets/css/kolbyPicks.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/loginSignup.css",
+      "PackagePath": "staticwebassets/css/loginSignup.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/news.css",
+      "PackagePath": "staticwebassets/css/news.css"
+    },
+    {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/scoreboard.css",
+      "PackagePath": "staticwebassets/css/scoreboard.css"
     },
     {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/css/style.css",
@@ -65,16 +89,8 @@
       "PackagePath": "staticwebassets/js/nbaNews.js"
     },
     {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/package.json",
-      "PackagePath": "staticwebassets/js/package.json"
-    },
-    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/scoreboard.js",
       "PackagePath": "staticwebassets/js/scoreboard.js"
-    },
-    {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/js/showLoginPage.js",
-      "PackagePath": "staticwebassets/js/showLoginPage.js"
     },
     {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/lib/bootstrap/LICENSE",

@@ -8,19 +8,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SportsScores</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/loginSignup.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="~/MyTestWeb.styles.css" asp-append-version="true" />
-     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: black;">
 
-<div class="container1">
+<div class="container">
   <h1>Login</h1>
     @if (!String.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
     {
@@ -29,7 +23,7 @@
         </div>
     }
     <!-- The Modal -->
-<div id="id01" class="modal">
+<div class="modal">
 
   <!-- Modal Content -->
   <form class="modal-content animate" method="post">
@@ -54,10 +48,5 @@
 </div>
 
 </div>
-
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
 </body>
 </html>

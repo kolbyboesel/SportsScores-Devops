@@ -70,12 +70,10 @@ function round(value) {
 async function buildBestBetBoard(allOdds, containerName) {
   clear(containerName);
 
-  let html = "";
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
   allOdds.forEach((currentGame) => {
     let homeTeam = 0;
     let awayTeam = 0;
-    let homeMoneylinePrice = 0;
-    let awayMoneylinePrice = 0;
     let homeMoneylineVal = 0;
     let awayMoneylineVal = 0;
     let currentLeague = currentGame.league_name;
@@ -88,8 +86,6 @@ async function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt);
       awayMoneylineVal = round(currentGame.rank_atw_nt);
-      homeMoneylinePrice = getHomeMoneylinePrice(homeTeam, currentLeague);
-      awayMoneylinePrice = getAwayMoneylinePrice(awayTeam, currentLeague);
       html += generateBestBetsBoard(
         currentGame,
         homeTeam,
@@ -103,16 +99,12 @@ async function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
-      homeMoneylinePrice = getHomeMoneylinePrice(homeTeam, currentLeague);
-      awayMoneylinePrice = getAwayMoneylinePrice(awayTeam, currentLeague);
       html += generateBestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
         homeMoneylineVal,
         awayMoneylineVal,
-        homeMoneylinePrice,
-        awayMoneylinePrice
       );
     }
   });
@@ -126,25 +118,20 @@ function generateBestBetsBoard(
   awayTeam,
   homeMoneylineVal,
   awayMoneylineVal,
-  homeMoneylinePrice,
-  awayMoneylinePrice
 ) {
-  let htmlSegment = `<div class="outerBestBets"><div class="bestBets">`;
+  let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
   htmlSegment += `<div class="header">
         <div class="headerElement-team">Team Name</div>
-        <div class="headerElement-best">Moneyline Value</div>
         <div class="headerElement-best">% Chance to Hit</div>
       </div>
-      <div class="team">
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
         <div class="bestBetTeam">${awayTeam}</div>
-        <div class="bestBetElement">${awayMoneylinePrice}</div>
         <div class="bestBetElement">${awayMoneylineVal * 100}</div>
       </div>
      
       <div class="team">
         <div class="bestBetTeam">${homeTeam}</div>
-        <div class="bestBetElement">${homeMoneylinePrice}</div>
         <div class="bestBetElement">${homeMoneylineVal * 100}</div>
       </div>`;
 

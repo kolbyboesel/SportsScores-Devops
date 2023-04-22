@@ -1,0 +1,93 @@
+@media screen and (max-width: 600px) {
+  .mobileScreen {
+    width: 96% !important;
+  }
+}
+
+.outerBestBets {
+  width: 46%;
+  height: 200px;
+  margin: 2%;
+  border: 10px solid rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.bestBets {
+  width: 100%;
+  border-style: hidden;
+  border-width: 20px;
+  height: 100%;
+  align-items: center;
+  background: linear-gradient(-60deg, #46404f 53%, #4b4452 53%);
+  box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  background: white;
+  font-size: 1.5vh;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  letter-spacing: 1px;
+}
+
+.headerElement-team {
+  border-width: 1px;
+  display: flex;
+  border-color: black;
+  width: 60%;
+  flex-shrink: 0;
+  justify-content: left;
+  letter-spacing: 2px;
+}
+
+.headerElement-best {
+  border-width: 1px;
+  display: flex;
+  border-color: black;
+  width: 40%;
+  flex-shrink: 0;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.bestBetTeam {
+  flex-shrink: 0;
+  width: 60%;
+  display: flex;
+  font-size: 1.5vh;
+  justify-content: left;
+  letter-spacing: 2px;
+}
+
+.bestBetElement {
+  flex-shrink: 0;
+  width: 40%;
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.bestBetHeader{
+  width:100%;
+  height: 10%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  margin:auto;
+  padding-top: 10px;
+}
+
+.headerText {
+  text-align: center;
+  color: black;
+  width:100%;
+  margin:auto;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 4vh;
+}

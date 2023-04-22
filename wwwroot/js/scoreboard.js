@@ -115,7 +115,7 @@ function generateScoreboard(
   winningTeam,
   dateTimeValue
 ) {
-  let htmlSegment = `<div class="outer"><div class="scoreboard">`;
+  let htmlSegment = `<div class="outer mobileScreen"><div class="scoreboard">`;
   let gameStatus;
 
   if (currentScore.completed) {
@@ -129,11 +129,10 @@ function generateScoreboard(
     <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
     <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%"">${gameStatus}</div>
   </div>
-      <div class="team win">
+      <div class="team win divider" style="border-left: none; border-top:none; border-right:none;">
         <div class="team">${currentScore.away_team}</div>
         <div class="score">${awayScore}</div>
       </div>
-      <div class="divider w3-mobile"></div>
       <div class="team lose">
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>
@@ -143,11 +142,10 @@ function generateScoreboard(
     <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
     <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%">${gameStatus}</div>
   </div>
-      <div class="team lose">
+      <div class="team lose divider" style="border-left: none; border-top:none; border-right:none;">
         <div class="team">${currentScore.away_team}</div>
         <div class="score">${awayScore}</div>
       </div>
-      <div class="divider"></div>
       <div class="team win">
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>

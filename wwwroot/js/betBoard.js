@@ -19,54 +19,6 @@ let overOdds = 0;
 let underOdds = 0;
 let completedDate = 0;
 
-async function getHomeMoneylinePrice(teamName, league) {
-  let neededURL;
-  if (league === "MLB") {
-    neededURL = MLB_URL;
-  }
-  if (league === "NBA") {
-    neededURL = NBA_URL;
-  }
-  if (league === "NHL") {
-    neededURL = NHL_URL;
-  }
-  if (league === "NFL") {
-    neededURL = NFL_URL;
-  }
-
-  let tempDataSet = await getData(neededURL);
-  tempDataSet.forEach((currentGame) => {
-    if (currentGame.home_team === teamName) {
-      setValues(currentGame);
-      return Number(homeMoneyline);
-    }
-  });
-}
-
-async function getAwayMoneylinePrice(teamName, league) {
-  let neededURL;
-  if (league === "MLB") {
-    neededURL = MLB_URL;
-  }
-  if (league === "NBA") {
-    neededURL = NBA_URL;
-  }
-  if (league === "NHL") {
-    neededURL = NHL_URL;
-  }
-  if (league === "NFL") {
-    neededURL = NFL_URL;
-  }
-
-  let tempDataSet = await getData(neededURL);
-  tempDataSet.forEach((currentGame) => {
-    if (currentGame.away_team === teamName) {
-      setValues(currentGame);
-      return Number(awayMoneyline);
-    }
-  });
-}
-
 async function showNBAOdds() {
   buildOddsBoard(await getData(NBA_URL), "containerNBA");
 }
@@ -106,32 +58,77 @@ function formatDate(rawDate) {
   );
 }
 
+function checkValues() {
+  if (awaySpread == 0) {
+    awaySpread = "NA";
+  }
+  if (homeSpread == 0) {
+    homeSpread = "NA";
+  }
+  if (homeSpreadOdds == 0) {
+    homeSpreadOdds = "NA";
+  }
+  if (awaySpreadOdds == 0) {
+    awaySpreadOdds = "NA";
+  }
+  if (awayMoneyline == 0) {
+    awayMoneyline = "NA";
+  }
+  if (homeMoneyline == 0) {
+    homeMoneyline = "NA";
+  }
+  if (overValue == 0) {
+    overValue = "NA";
+  }
+  if (underValue == 0) {
+    underValue = "NA";
+  }
+  if (overOdds == 0) {
+    overOdds = "NA";
+  }
+  if (underOdds == 0) {
+    underOdds = "NA";
+  }
+}
+
 function generateOddsBoard(currentGame) {
+  checkValues(
+    awaySpread,
+    homeSpread,
+    homeSpreadOdds,
+    awaySpreadOdds,
+    awayMoneyline,
+    homeMoneyline,
+    overValue,
+    underValue,
+    overOdds,
+    underOdds
+  );
+
   let htmlSegment = `<div class="outerBetBoard"><div class="betBoard">`;
   let gameStatus;
 
   htmlSegment += `<div class="header">
-        <div class="headerDate">Date: ${completedDate}</div>
+        <div class="headerDate mobileText">Date: ${completedDate}</div>
         <div class="headerElement">Spread</div>
         <div class="headerElement">O/U</div>
         <div class="headerElement">ML</div>
       </div>
-      <div class="team win">
+      <div class="team win divider" style="border-left: none; border-top:none; border-right:none;">
         <div class="betteam">${currentGame.away_team}</div>
-        <div class="betTeamElement">${
+        <div class="betTeamElement mobileText">${
           awaySpread + "(" + awaySpreadOdds + ")"
         }</div>
-        <div class="betTeamElement">${overValue + "(" + overOdds + ")"}</div>
-        <div class="betTeamElement">${awayMoneyline}</div>
+        <div class="betTeamElement mobileText">${overValue + "(" + overOdds + ")"}</div>
+        <div class="betTeamElement mobileText">${awayMoneyline}</div>
       </div>
-      <div class="betdivider"></div>
       <div class="team lose">
         <div class="betteam">${currentGame.home_team}</div>
-        <div class="betTeamElement">${
+        <div class="betTeamElement mobileText">${
           homeSpread + "(" + homeSpreadOdds + ")"
         }</div>
-        <div class="betTeamElement">${underValue + "(" + underOdds + ")"}</div>
-        <div class="betTeamElement">${homeMoneyline}</div>
+        <div class="betTeamElement mobileText">${underValue + "(" + underOdds + ")"}</div>
+        <div class="betTeamElement mobileText">${homeMoneyline}</div>
       </div>`;
 
   htmlSegment += `
@@ -142,6 +139,18 @@ function generateOddsBoard(currentGame) {
 }
 
 function setValues(currentGame) {
+  awaySpread =
+    homeSpread =
+    homeSpreadOdds =
+    awaySpreadOdds =
+    awayMoneyline =
+    homeMoneyline =
+    overValue =
+    underValue =
+    overOdds =
+    underOdds =
+      0;
+
   if (currentGame.bookmakers[0].markets.length === 1) {
     let currentMarket = currentGame.bookmakers[0].markets[0].key;
     if (currentMarket === "spreads") {

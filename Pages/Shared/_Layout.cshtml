@@ -4,22 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SportsScores</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-      footer {
-        position: absolute;
-        height: auto;
-        vertical-align: middle;
-        bottom:0;
-        width: 100%;
-        white-space: nowrap;
-        color: black;
-        opacity: 0.5;
-      }    
-    </style>
 </head>
 
 <body>
@@ -30,22 +18,21 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width: auto;">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/Index">Sports Scores</a>
+      <a class="navbar-brand w3-hover-white" href="/Index" style="color: white">Sports Scores</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav" style="display: block;">
-        <li><a href="/Index">Home</a></li>
-        <li><a href="/NBA">NBA</a></li>
-        <li><a href="/MLB">MLB</a></li>
-        <li><a href="/NHL">NHL</a></li>
-        <li><a href="/NFL">NFL</a></li>
+        <li><a class="w3-hover-white" href="/NBA" style="color: white">NBA</a></li>
+        <li><a class="w3-hover-white" href="/MLB" style="color: white">MLB</a></li>
+        <li><a class="w3-hover-white" href="/NHL" style="color: white">NHL</a></li>
+        <li><a class="w3-hover-white" href="/NFL" style="color: white">NFL</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right" style="display: block;">
-        <li><a href="/MongoDb/Signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/MongoDb/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a class="w3-hover-white" href="/MongoDb/Signup" style="color: white"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a class="w3-hover-white" href="/MongoDb/Login" style="color: white"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -57,15 +44,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="background-color: white; position: fixed">
-        <div class="container footerText" style="width: 100%; bottom: 0; left: 5%; margin: auto">
-            &copy; 2023 - SportsScores - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer text-muted">
+        <div class="container footerText">
+            &copy; 2023 - SportsScores - <a style="color: white;" asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
