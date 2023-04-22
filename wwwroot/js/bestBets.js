@@ -17,15 +17,13 @@ async function getBetData(url) {
   }
 }
 
-function getDatePlusOne(){
-let currentDate = new Date()
-  currentDate.setDate(currentDate.getDate() + 1);
-  let date = currentDate.toJSON().substring(0,10);
-  return date;
+function getUTCDate(){
+  let currentDate = new Date().toISOString();
+  return currentDate.substring(0,10);
 }
 
 async function showNBABets() {
-  let currentDate = getDatePlusOne();
+  let currentDate = getUTCDate();
 
   buildBestBetBoard(
     await getBetData(
@@ -36,7 +34,7 @@ async function showNBABets() {
 }
 
 async function showMLBBets() {
-  let currentDate = getDatePlusOne();
+  let currentDate = getUTCDate();
 
   buildBestBetBoard(
     await getBetData(
@@ -47,7 +45,7 @@ async function showMLBBets() {
 }
 
 async function showNFLBets() {
-  let currentDate = getDatePlusOne();
+  let currentDate = getUTCDate();
 
   buildBestBetBoard(
     await getBetData(
@@ -58,7 +56,7 @@ async function showNFLBets() {
 }
 
 async function showNHLBets() {
-  let currentDate = getDatePlusOne();
+  let currentDate = getUTCDate();
 
   buildBestBetBoard(
     await getBetData(
@@ -148,3 +146,5 @@ function generateBestBetsBoard(
 
   return htmlSegment;
 }
+
+getDatePlusOne();
