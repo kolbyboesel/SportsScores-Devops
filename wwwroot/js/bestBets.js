@@ -17,53 +17,129 @@ async function getBetData(url) {
   }
 }
 
-function getUTCDate(){
-  let currentDate = new Date().toISOString();
-  return currentDate.substring(0,10);
+function getEventDay(epochTIS) {
+  let milliseconds = epochTIS * 1000;
+  let date = new Date(milliseconds);
+  date.setHours(date.getHours() - 5);
+  return date.getDate();
+}
+
+function getCurrentDay() {
+  let currentDate = new Date();
+  currentDate.setHours(currentDate.getHours() - 5);
+  return currentDate.getDate();
+}
+
+function getCurrentDate() {
+  let currentDate = new Date();
+  currentDate.setHours(currentDate.getHours() - 5);
+  let date = currentDate.toISOString();
+  date = date.substring(0, 10);
+  return date;
+}
+
+function getDatePlusOne() {
+  let currentDate = new Date();
+  currentDate.setHours(currentDate.getHours() - 5);
+  currentDate.setDate(currentDate.getDate() + 1);
+  let date = currentDate.toISOString();
+  date = date.substring(0, 10);
+  return date;
 }
 
 async function showNBABets() {
-  let currentDate = getUTCDate();
+  let currentDate = getCurrentDate();
+  let nextDay = getDatePlusOne();
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
 
-  buildBestBetBoard(
+
+  html += buildBestBetBoard(
     await getBetData(
       "https://betigolo-predictions.p.rapidapi.com/basketball/" + currentDate
     ),
     "containerNBA"
   );
+
+  html += buildBestBetBoard(
+    await getBetData(
+      "https://betigolo-predictions.p.rapidapi.com/basketball/" + nextDay
+    ),
+    "containerNBA"
+  );
+
+  let container = document.querySelector(".containerNBA");
+  container.innerHTML = html;
 }
 
 async function showMLBBets() {
-  let currentDate = getUTCDate();
+  let currentDate = getCurrentDate();
+  let nextDay = getDatePlusOne();
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
 
-  buildBestBetBoard(
+
+  html += buildBestBetBoard(
     await getBetData(
       "https://betigolo-predictions.p.rapidapi.com/baseball/" + currentDate
     ),
     "containerMLB"
   );
+
+  html += buildBestBetBoard(
+    await getBetData(
+      "https://betigolo-predictions.p.rapidapi.com/baseball/" + nextDay
+    ),
+    "containerMLB"
+  );
+
+  let container = document.querySelector(".containerMLB");
+  container.innerHTML = html;
 }
 
 async function showNFLBets() {
-  let currentDate = getUTCDate();
+  let currentDate = getCurrentDate();
+  let nextDay = getDatePlusOne();
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
 
-  buildBestBetBoard(
+
+  html += buildBestBetBoard(
     await getBetData(
       "https://betigolo-predictions.p.rapidapi.com/football/" + currentDate
     ),
     "containerNFL"
   );
+
+  html += buildBestBetBoard(
+    await getBetData(
+      "https://betigolo-predictions.p.rapidapi.com/football/" + nextDay
+    ),
+    "containerNFL"
+  );
+
+  let container = document.querySelector(".containerNFL");
+  container.innerHTML = html;
 }
 
 async function showNHLBets() {
-  let currentDate = getUTCDate();
+  let currentDate = getCurrentDate();
+  let nextDay = getDatePlusOne();
+  clear("containerNHL");
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
 
-  buildBestBetBoard(
+  html += buildBestBetBoard(
     await getBetData(
       "https://betigolo-predictions.p.rapidapi.com/icehockey/" + currentDate
     ),
     "containerNHL"
   );
+
+  html += buildBestBetBoard(
+    await getBetData(
+      "https://betigolo-predictions.p.rapidapi.com/icehockey/" + nextDay
+    ),
+    "containerNHL"
+  );
+  let container = document.querySelector(".containerNHL");
+  container.innerHTML = html;
 }
 
 function round(value) {
@@ -72,20 +148,21 @@ function round(value) {
   return returnValue;
 }
 
-async function buildBestBetBoard(allOdds, containerName) {
-  clear(containerName);
-
-  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
+function buildBestBetBoard(allOdds, containerName) {
+  let html = "";
   allOdds.forEach((currentGame) => {
     let homeTeam = 0;
     let awayTeam = 0;
     let homeMoneylineVal = 0;
     let awayMoneylineVal = 0;
     let currentLeague = currentGame.league_name;
+    let currentDay = getCurrentDay();
+    let eventDay = getEventDay(currentGame.match_dat);
     if (
       containerName === "containerMLB" &&
       currentGame.country_name === "USA" &&
-      currentLeague === "MLB"
+      currentLeague === "MLB" &&
+      currentDay === eventDay
     ) {
       homeTeam = currentGame.home_team_name;
       awayTeam = currentGame.away_team_name;
@@ -99,7 +176,12 @@ async function buildBestBetBoard(allOdds, containerName) {
         awayMoneylineVal
       );
     }
-    if (containerName != "containerMLB" && currentGame.country_name === "USA") {
+    if (
+      containerName === "containerNHL" &&
+      currentGame.country_name === "USA" &&
+      currentLeague === "NHL" &&
+      currentDay === eventDay
+    ) {
       homeTeam = currentGame.home_team_name;
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
@@ -109,12 +191,30 @@ async function buildBestBetBoard(allOdds, containerName) {
         homeTeam,
         awayTeam,
         homeMoneylineVal,
-        awayMoneylineVal,
+        awayMoneylineVal
+      );
+    }
+
+    if (
+      containerName != "containerNHL" &&
+      containerName != "containerMLB" &&
+      currentGame.country_name === "USA" &&
+      currentDay === eventDay
+    ) {
+      homeTeam = currentGame.home_team_name;
+      awayTeam = currentGame.away_team_name;
+      homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
+      awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
+      html += generateBestBetsBoard(
+        currentGame,
+        homeTeam,
+        awayTeam,
+        homeMoneylineVal,
+        awayMoneylineVal
       );
     }
   });
-  let container = document.querySelector("." + containerName);
-  container.innerHTML = html;
+  return html;
 }
 
 function generateBestBetsBoard(
@@ -122,7 +222,7 @@ function generateBestBetsBoard(
   homeTeam,
   awayTeam,
   homeMoneylineVal,
-  awayMoneylineVal,
+  awayMoneylineVal
 ) {
   let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
@@ -146,5 +246,3 @@ function generateBestBetsBoard(
 
   return htmlSegment;
 }
-
-getDatePlusOne();

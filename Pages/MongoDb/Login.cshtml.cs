@@ -2,6 +2,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyTestWeb.Models;
 using RestSharp;
+using System.Linq;
 
 namespace MyTestWeb.Pages.MongoDb;
 
@@ -62,18 +63,25 @@ public class LoginModel : PageModel
         // Retrieve the user's data from MongoDB
         var client = new RestClient("https://eastus2.azure.data.mongodb-api.com/app/data-sdfbt/endpoint/data/v1/action/find");
         var response = await GetData(client);
-        var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
 
-        foreach (var user in users.Documents)
+        if (response != null)
         {
-            if ((user.LoginId == username) && (user.PasswordId == password))
-            {
+            var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
+            var currentUser = users.Documents.FirstOrDefault(x => string.Equals(x.LoginId, username, StringComparison.OrdinalIgnoreCase));
 
-                Response.Redirect("/AccountHome");
+            if (currentUser == null)
+            {
+                // user doesn't exist in Json
+            }
+            else
+            {
+                if (currentUser.PasswordId == password)
+                {
+                    Response.Redirect("/AccountHome");
+                }
+                ViewData["ErrorMessage"] = "Invalid username or password";
             }
         }
-        ViewData["ErrorMessage"] = "Invalid username or password";
-
     }
 
 }
