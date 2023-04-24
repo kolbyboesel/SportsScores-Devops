@@ -12,6 +12,7 @@ public class SignupModel : PageModel
     private IMongoCollection<User> _newUser;
     public async Task OnGet()
     {
+
     }
     public async Task OnPostAsync()
     {
@@ -21,11 +22,11 @@ public class SignupModel : PageModel
         var client = new MongoClient(settings);
         var usersList = client.GetDatabase("Login_Data");
         _newUser = usersList.GetCollection<User>("Login_Info");
-
+        
         var username = Request.Form["username"];
         var password = Request.Form["password"];
         var confirm_password = Request.Form["password-repeat"];
-
+        
         var filter = Builders<User>.Filter
             .Eq(r => r.LoginID, username.ToString());
 
