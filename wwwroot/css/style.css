@@ -57,6 +57,12 @@ body {
   font-size: 4vh;
 }
 
+@media screen and (max-width: 600px) {
+  .mobileScreen {
+    width: 96% !important;
+  }
+}
+
 /*General style for score and bet containers across the site*/
 .team {
   width: 100%;

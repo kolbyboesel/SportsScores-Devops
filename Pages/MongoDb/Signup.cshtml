@@ -1,5 +1,5 @@
 @page
-@model MyTestWeb.Pages.MongoDb.LoginModel
+@model MyTestWeb.Pages.MongoDb.SignupModel
 @{
 }
 <!DOCTYPE html>
@@ -12,41 +12,69 @@
     <link rel="stylesheet" href="~/css/loginSignup.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body style="background-color: black;">
+
+<body>
+
+</div>
+<style>
+body {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5b352a76f93fd4a1745161a8/1530580533507-XFJITGNH91P5QQGMSX4Q/layout-background.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 
 <!-- The Modal (contains the Sign Up form) -->
-<div class="modal">
-  <form class="modal-content" method="post">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
-
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-     <button type="submit">Sign Up</button>
-
-      <div class="container" style="background-color:#f1f1f1; padding-left: 0">
-      <a type="button" href="/Index" class="cancelbtn">Cancel</a>
+<div class="modal" style="height: 100%;">
+  <div class="container">
+    <div class="container" style="height: 18%; padding-top:0; ">
+      @if (!String.IsNullOrEmpty(ViewData["ErrorMessageSgnUp"] as string))
+      {
+        <div class="alert alert-danger" role="alert" style="padding-top: 10px;">
+          @ViewData["ErrorMessageSgnUp"]
+        </div>
+      }
     </div>
+
+    <form class="modal-content mobileScreen" method="post" style="height:82%">
+      <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="username"><b>Username</b></label>
+        <input id="username" type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input id="passwordRepeat" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <button type="submit">Sign Up</button>
+
+        <div class="container" style="background-color:#f1f1f1; padding-left: 0">
+          <a type="button" href="/Index" class="cancelbtn">Cancel</a>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>
+
+
+<footer class="footer text-muted" style="position: absolute;">
+        <div class="container footerText" style="color: white;">
+            &copy; 2023 - SportsScores - <a style="color: white;" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+</footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/showLoginPage.js" asp-append-version="true"></script>
 </body>
 </html>

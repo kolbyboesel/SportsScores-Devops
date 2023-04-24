@@ -71,7 +71,7 @@ public class LoginModel : PageModel
 
             if (currentUser == null)
             {
-                // user doesn't exist in Json
+                ViewData["ErrorMessage"] = "Invalid username or password";            
             }
             else
             {

@@ -11,22 +11,33 @@
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/loginSignup.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
-<body style="background-color: black;">
+<body>
+<style>
+body {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5b352a76f93fd4a1745161a8/1530580533507-XFJITGNH91P5QQGMSX4Q/layout-background.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+    <!-- The Modal -->
+<div class="modal" style="height: 100%;">
 
 <div class="container">
-  <h1>Login</h1>
+  <!-- Modal Content -->
+  <div class="container" style="height: 18%; padding-top:0; ">
     @if (!String.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
     {
-        <div class="alert alert-danger" role="alert" style="padding-top: 10px;">
+        <div class="alert alert-danger" role="alert">
             @ViewData["ErrorMessage"]
         </div>
     }
-    <!-- The Modal -->
-<div class="modal">
+  </div>
 
-  <!-- Modal Content -->
-  <form class="modal-content animate" method="post">
+  <form class="modal-content animate mobileScreen" method="post" style="height:82%">
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
@@ -45,8 +56,14 @@
       <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
   </form>
+  </div>
 </div>
 
-</div>
+<footer class="footer text-muted" style="position: absolute;">
+        <div class="container footerText" style="color: white;">
+            &copy; 2023 - SportsScores - <a style="color: white;" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+</footer>
+
 </body>
 </html>
