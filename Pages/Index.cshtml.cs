@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyTestWeb.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace MyTestWeb.Pages

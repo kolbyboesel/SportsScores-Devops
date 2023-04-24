@@ -105,3 +105,9 @@ body {
   border-width: 1px;
   border-style:solid;
 }
+
+.act-divider{
+  border-bottom:white;
+  border-width: 1px;
+  border-style:solid;
+}

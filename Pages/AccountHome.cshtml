@@ -1,21 +1,55 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Account Home";
 }
 
 <meta name="viewport" content="width=device-width" initial-scale="1.0">
 <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-<link rel="stylesheet" href="~/css/accountHome.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="~/js/showLoginPage.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+<link rel="stylesheet" href="~/css/kolbyPicks.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/bestBet.css" asp-append-version="true" />
+<script src="~/js/bestBets.js" asp-append-version="true"></script>
+<script src="~/js/kolbysBets.js" asp-append-version="true"></script>
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <body style="background-color: beige;">
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function showBestDropdown() {
+  document.getElementById("BestDropdown").classList.toggle("show");
+}
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var bestDropdown = document.getElementById("BestDropdown");
+    if (bestDropdown.classList.contains('show')) {
+      bestDropdown.classList.remove('show');
+    }
+  }
+}
+
+function showKolbysDropdown() {
+  document.getElementById("KolbysDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var kolbyDropdown = document.getElementById("KolbysDropdown");
+    if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
 <header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 55px;">
         <h1 class="w3-margin w3-jumbo"
           style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Account Home</h1>
@@ -23,21 +57,41 @@
 
         <div class="w3" width=100%>
           <div class="w3-bar w3-red" width=100%>
-            <a onclick="" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 20%;"></a>
-            <a onclick="" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 20%;"></a>
-            <a onclick="" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 20%;"></a>
-            <a onclick="" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 20%;"></a>
-            <a onclick="" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 20%;"></a>
+            <a href="/AccountHome" class="w3-bar-item w3-button w3-mobile w3-hover-white"
+              style="width: 25%; height: 50px; font-size:16px; padding:15px;">Home</a>
+            
+            <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%;">
+              <button class="dropbtn w3-hover-text-black" onclick="showBestDropdown()">AI Best Bets
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content w3-mobile" id="BestDropdown" style="display: none;">
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showNBABets();showBestDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showMLBBets();showBestDropdown() style="border-left: none; border-top:none; border-right:none;">MLB</a>
+                <a class="dropdown-link w3-red w3-hover-white" onclick=showNHLBets();showBestDropdown()>NHL</a>
+              </div>
+            </div>
+
+            <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%;">
+              <button class="dropbtn w3-hover-text-black" onclick="showKolbysDropdown()">Kolby's Picks
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content w3-mobile" id="KolbysDropdown" style="display: none;">
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showKolbysNBA();showKolbysDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showKolbysMLB();showKolbysDropdown() style="border-left: none; border-top:none; border-right:none;">MLB</a>
+                <a class="dropdown-link w3-red w3-hover-white" onclick=showKolbysNHL();showKolbysDropdown()>NHL</a>
+              </div>
+            </div>
+
+            <a href="/AccountHome" class="w3-bar-item w3-button w3-mobile w3-hover-white"
+              style="width: 25%; height: 50px; font-size:16px; padding:15px;">Account Settings</a>
           </div>
         </div>
 
-        <div class="bestBetHeader">
-          <div class="headerText">No functions currently available, check back soon!</div>
+        <div class="AccountContainer"></div>
+
+        <footer class="footer text-muted">
+        <div class="container footerText">
+            &copy; 2023 - SportsScores - <a style="color: black;" asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-        <div class="AccountContainer" style="align-items: center;"></div>
+        </footer>
 </body>

@@ -1,6 +1,7 @@
 function showKolbysNBA() {
-  clear("containerNBA");
-  let htmlSegment = `<div class="kolbyPicksFullCont">`;
+
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets</div></div>
+  <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
@@ -13,15 +14,15 @@ function showKolbysNBA() {
     </div>
     </div>`;
 
-  let container = document.querySelector(".containerNBA");
+  let container = document.querySelector(".AccountContainer");
   console.log(htmlSegment);
   container.innerHTML = htmlSegment;
 }
 
 function showKolbysMLB() {
-  clear("containerMLB");
 
-  let htmlSegment = `<div class="kolbyPicksFullCont">`;
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets</div></div>
+  <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
@@ -33,14 +34,14 @@ function showKolbysMLB() {
     </div>
     </div>`;
 
-  let container = document.querySelector(".containerMLB");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = htmlSegment;
 }
 
 function showKolbysNHL() {
-  clear("containerNHL");
 
-  let htmlSegment = `<div class="kolbyPicksFullCont">`;
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets</div></div>
+  <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
@@ -52,14 +53,14 @@ function showKolbysNHL() {
     </div>
     </div>`;
 
-  let container = document.querySelector(".containerNHL");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = htmlSegment;
 }
 
 function showKolbysNFL() {
-  clear("containerNFL");
 
-  let htmlSegment = `<div class="kolbyPicksFullCont">`;
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NFL Bets</div></div>
+  <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
@@ -71,6 +72,6 @@ function showKolbysNFL() {
     </div>
     </div>`;
 
-  let container = document.querySelector(".containerNFL");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = htmlSegment;
 }

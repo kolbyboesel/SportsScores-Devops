@@ -67,7 +67,7 @@ async function showNBABets() {
     "containerNBA"
   );
 
-  let container = document.querySelector(".containerNBA");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = html;
 }
 
@@ -91,7 +91,7 @@ async function showMLBBets() {
     "containerMLB"
   );
 
-  let container = document.querySelector(".containerMLB");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = html;
 }
 
@@ -115,14 +115,14 @@ async function showNFLBets() {
     "containerNFL"
   );
 
-  let container = document.querySelector(".containerNFL");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = html;
 }
 
 async function showNHLBets() {
   let currentDate = getCurrentDate();
   let nextDay = getDatePlusOne();
-  clear("containerNHL");
+  
   let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
 
   html += buildBestBetBoard(
@@ -138,7 +138,7 @@ async function showNHLBets() {
     ),
     "containerNHL"
   );
-  let container = document.querySelector(".containerNHL");
+  let container = document.querySelector(".AccountContainer");
   container.innerHTML = html;
 }
 
