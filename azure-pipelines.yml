@@ -15,9 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
-    azureSubscription: '<SportsScores>'
-    appName: '<sports-scores-application>'
-    package: $(System.DefaultWorkingDirectory)/**/*.zip    
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure subscription 1(d97d744b-01c9-48a3-9d26-64a27bfbc91d)'
+    appType: 'webApp'
+    WebAppName: 'sports-scores-application'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
