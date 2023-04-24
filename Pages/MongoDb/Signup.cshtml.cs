@@ -19,28 +19,38 @@ public class SignupModel : PageModel
         var settings = MongoClientSettings.FromConnectionString(connectionUri);
         settings.ServerApi = new ServerApi(ServerApiVersion.V1);
         var client = new MongoClient(settings);
-        var usersList = client.GetDatabase("Login_Date");
+        var usersList = client.GetDatabase("Login_Data");
         _newUser = usersList.GetCollection<User>("Login_Info");
-
-        User newUser = new()
-        {
-            LoginID = Request.Form["username"],
-            PasswordID = Request.Form["password"],
-        };
-
-        await _newUser.InsertOneAsync(newUser);
-
 
         var username = Request.Form["username"];
         var password = Request.Form["password"];
-        var confirm_password = Request.Form["passwordRepeat"];
+        var confirm_password = Request.Form["password-repeat"];
 
-        if (password == confirm_password)
+        var filter = Builders<User>.Filter
+            .Eq(r => r.LoginID, username.ToString());
+
+        if (_newUser.Find(filter).FirstOrDefault() == null)
         {
+            if (password == confirm_password)
+            {
+                User newUser = new()
+                {
+                    LoginID = username,
+                    PasswordID = password,
+                };
+
+                await _newUser.InsertOneAsync(newUser);
+
+                Response.Redirect("/AccountHome");
+            }
+            else
+            {
+                ViewData["ErrorMessageSgnUp"] = "Passwords do not match";
+            }
         }
         else
         {
-            
+            ViewData["ErrorMessageSgnUp"] = "Username already taken";
         }
     }
 
@@ -48,7 +58,8 @@ public class SignupModel : PageModel
 
 public class User
 {
-    public int _id {get;set;}
+
+    public ObjectId _id {get; set; }
     public string LoginID { get; set; }
     public string PasswordID { get; set; }
 

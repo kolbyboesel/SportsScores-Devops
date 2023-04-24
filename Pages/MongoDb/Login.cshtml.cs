@@ -71,7 +71,7 @@ public class LoginModel : PageModel
 
             if (currentUser == null)
             {
-                ViewData["ErrorMessage"] = "Invalid username or password";            
+                ViewData["ErrorMessage"] = "Invalid username";            
             }
             else
             {
@@ -79,7 +79,7 @@ public class LoginModel : PageModel
                 {
                     Response.Redirect("/AccountHome");
                 }
-                ViewData["ErrorMessage"] = "Invalid username or password";
+                ViewData["ErrorMessage"] = "Invalid password";
             }
         }
     }
