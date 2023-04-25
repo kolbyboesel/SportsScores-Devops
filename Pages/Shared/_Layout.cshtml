@@ -31,12 +31,32 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right" style="display: block;">
-        <li><a class="w3-hover-white" href="/MongoDb/Signup" style="color: white; text-align:center"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a class="w3-hover-white" href="/MongoDb/Login" style="color: white; text-align:center"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a id="loginBtn" class="w3-hover-white" href="/MongoDb/Signup" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="signupBtn" class="w3-hover-white" href="/MongoDb/Login" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a id="logoutBtn" class="w3-hover-white" href="/Signout" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        <li><a id="accountBtn" class="w3-hover-white" href="/AccountHome" style="color: white; text-align:center; display: none"><span class="glyphicon glyphicon-user"></span> Account Home</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
+  <script type="text/javascript">
+    var cookie = document.cookie;
+    var result = cookie.substring(cookie.indexOf("=") + 1)
+
+    if(result == "true"){
+      document.getElementById("loginBtn").style.display = "none";
+      document.getElementById("signupBtn").style.display = "none";
+      document.getElementById("logoutBtn").style.display = "block";
+      document.getElementById("accountBtn").style.display = "block";
+    }
+    else{
+      document.getElementById("loginBtn").style.display = "block";
+      document.getElementById("signupBtn").style.display = "block";
+      document.getElementById("logoutBtn").style.display = "none";
+      document.getElementById("accountBtn").style.display = "none";
+    }
+</script>
 
     <div style="width: 100%; height: 100%;">
         <main role="main" style="width: 100%;">

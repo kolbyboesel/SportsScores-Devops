@@ -10,13 +10,6 @@ static class Program
         // Add services to the container.
         builder.Services.AddRazorPages();
 
-        builder.Services.AddDistributedMemoryCache();
-        builder.Services.AddSession(options =>
-        {
-            options.IdleTimeout = TimeSpan.FromMinutes(10);
-        }
-        );
-
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -30,7 +23,6 @@ static class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
-        app.UseSession();
 
         app.UseRouting();
 

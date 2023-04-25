@@ -18394,6 +18394,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/Signout.cshtml",
+      "TargetPath": "Pages\\Signout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/NHL.cshtml",
       "TargetPath": "Pages\\NHL.cshtml",
       "FileKind": "mvc"

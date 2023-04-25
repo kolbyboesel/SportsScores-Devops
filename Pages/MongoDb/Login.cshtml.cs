@@ -1,10 +1,8 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Http;
 using MyTestWeb.Models;
-using MyTestWeb.Controllers;
-
 using RestSharp;
-using System.Linq;
 
 namespace MyTestWeb.Pages.MongoDb;
 
@@ -69,6 +67,7 @@ public class LoginModel : PageModel
         {
             var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
             var currentUser = users.Documents.FirstOrDefault(x => string.Equals(x.LoginId, username, StringComparison.OrdinalIgnoreCase));
+            var cookie = Request.Cookies["loggedInStatus"];
 
             if (currentUser == null)
             {
@@ -78,9 +77,10 @@ public class LoginModel : PageModel
             {
                 if (currentUser.PasswordId == password)
                 {
+                    Response.Cookies.Append("loggedInStatus", "true");
                     Response.Redirect("/AccountHome");
                 }
-                ViewData["ErrorMessage"] = "Error Logging In";
+                ViewData["ErrorMessage"] = "Error: Username already taken";
             }
             ViewData["ErrorMessage"] = "Invalid password";
         }
