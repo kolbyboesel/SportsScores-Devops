@@ -41,9 +41,12 @@
 </nav>
 
   <script type="text/javascript">
-    var cookie = document.cookie;
-    var result = cookie.substring(cookie.indexOf("loggedInStatus=") + 1)
-    alert(cookie);
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${"loggedInStatus"}=`);
+    var result = 0;
+    if (parts.length === 2){
+      result = parts.pop().split(';').shift();
+    }
     if(result == "true"){
       document.getElementById("loginBtn").style.display = "none";
       document.getElementById("signupBtn").style.display = "none";
