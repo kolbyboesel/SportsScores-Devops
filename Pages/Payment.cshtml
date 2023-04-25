@@ -57,9 +57,7 @@ body {
       },
       onApprove: function(data, actions) {
         alert("Subscription Successful! Whenever you want to view the picks, log in and navigate to your desired choice."); // You can add optional success message for the subscriber here
-        Response.Cookies.Append("loggedInStatus", "true");
         window.location.href = "/AccountHome";
-
       }
   }).render('#paypal-button-container-P-6TS59700HA1617635MRDVNHY'); // Renders the PayPal button
 </script>
