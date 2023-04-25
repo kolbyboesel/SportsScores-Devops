@@ -42,8 +42,8 @@
 
   <script type="text/javascript">
     var cookie = document.cookie;
-    var result = cookie.substring(cookie.indexOf("=") + 1)
-
+    var result = cookie.substring(cookie.indexOf("loggedInStatus=") + 1)
+    alert(cookie);
     if(result == "true"){
       document.getElementById("loginBtn").style.display = "none";
       document.getElementById("signupBtn").style.display = "none";
