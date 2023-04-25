@@ -63,6 +63,15 @@ body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .mobileNavbar {
+    width: 25% !important;
+    float: right !important;
+    align-content: center !important;
+    background-color: black !important;
+  }
+}
+
 /*General style for score and bet containers across the site*/
 .team {
   width: 100%;

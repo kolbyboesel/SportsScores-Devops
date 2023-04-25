@@ -208,3 +208,25 @@ button:hover {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
+
+.paypalBtn{
+  background-color: #fefefe;
+  width: 50%;
+  height: 70%;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+}
+
+.subscriptionContainer{
+  height: 50%;
+  width: 100%;
+
+}
+
+.paypalBtnHolder{
+  height: 50%;
+  width: 100%;
+}

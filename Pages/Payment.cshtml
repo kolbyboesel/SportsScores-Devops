@@ -1,0 +1,76 @@
+@page
+@model MyTestWeb.Pages.PaymentModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportsScores</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/loginSignup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+
+</head>
+
+<body>
+
+</div>
+<style>
+body {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5b352a76f93fd4a1745161a8/1530580533507-XFJITGNH91P5QQGMSX4Q/layout-background.jpg?format=2500w');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<!-- The Modal (contains the Sign Up form) -->
+<div class="modal" style="height: 100%;">
+  <div class="container paypalBtn mobileScreen">
+    <div class="subscriptionContainer"><h2 style="text-align: center;">Thank you for signing up for Kolby's Picks!</h2> 
+        <p style="text-align: center;">This is a $5 monthly subscription which includes all Moneyline AI picks and Kolby's Daily Picks, both for NBA, NFL, MLB and NHL, also includes 1 week free trial.</p>
+        <h6 style="text-align: center;">Please Click one of the links below to proceed with payment!</h6>
+        </div>
+    <div class="paypalBtnHolder">
+    <div id="paypal-button-container-P-6TS59700HA1617635MRDVNHY"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AUd0qQwqx3a99eudXSf4m25OmVuxGGw9b-ta3NHgrE4yyMypxcyaVEm3R5wAXUw8kdewVwJP6zngFxWi&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6TS59700HA1617635MRDVNHY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert("Subscription Successful! Whenever you want to view the picks, log in and navigate to your desired choice."); // You can add optional success message for the subscriber here
+        window.location.href = "/AccountHome";
+
+      }
+  }).render('#paypal-button-container-P-6TS59700HA1617635MRDVNHY'); // Renders the PayPal button
+</script>
+
+
+<footer class="footer text-muted" style="position: absolute;">
+        <div class="container footerText" style="color: white;">
+            &copy; 2023 - SportsScores - <a style="color: white;" asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

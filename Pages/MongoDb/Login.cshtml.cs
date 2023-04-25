@@ -1,6 +1,8 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyTestWeb.Models;
+using MyTestWeb.Controllers;
+
 using RestSharp;
 using System.Linq;
 
@@ -10,7 +12,6 @@ public class LoginModel : PageModel
 {
     public LoginInfoResponseModel FindOneModel { get; set; }
     public List<LoginInfoResponseModel> FindModel { get; set; }
-
 
     public async Task OnGet()
     {
@@ -71,7 +72,7 @@ public class LoginModel : PageModel
 
             if (currentUser == null)
             {
-                ViewData["ErrorMessage"] = "Invalid username";            
+                ViewData["ErrorMessage"] = "Invalid username";
             }
             else
             {
@@ -79,10 +80,10 @@ public class LoginModel : PageModel
                 {
                     Response.Redirect("/AccountHome");
                 }
-                ViewData["ErrorMessage"] = "Invalid password";
+                ViewData["ErrorMessage"] = "Error Logging In";
             }
+            ViewData["ErrorMessage"] = "Invalid password";
         }
     }
-
 }
 
