@@ -18419,6 +18419,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/ConfirmPayment.cshtml",
+      "TargetPath": "Pages\\ConfirmPayment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"

@@ -11,6 +11,8 @@ public class SignoutModel : PageModel
     public void OnGet()
         {
             Response.Cookies.Delete("loggedInStatus");
+            Response.Cookies.Delete("CurrentUser");
+            Response.Cookies.Delete("PaidConfirm");
             Response.Redirect("/Index");
         }
 }

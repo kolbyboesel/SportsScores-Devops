@@ -212,7 +212,7 @@ button:hover {
 .paypalBtn{
   background-color: #fefefe;
   width: 50%;
-  height: 70%;
+  height: auto;
   border-radius:5px;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
@@ -229,4 +229,5 @@ button:hover {
 .paypalBtnHolder{
   height: 50%;
   width: 100%;
+  margin-top: 5%;
 }

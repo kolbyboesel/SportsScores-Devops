@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
+using MyTestWeb.Models;
+using RestSharp;
 
 namespace MyTestWeb.Pages
 {
@@ -13,9 +15,15 @@ namespace MyTestWeb.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-
+            var verifyPaid = Request.Cookies["PaidConfirm"];
+            
+            if(verifyPaid == "Yes"){
+            }
+            else{
+                 Response.Redirect("/Payment");
+            }
         }
     }
 }

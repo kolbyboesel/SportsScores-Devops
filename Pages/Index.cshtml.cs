@@ -16,7 +16,7 @@ namespace MyTestWeb.Pages
         public void OnGet()
         {   
             
-            if(Response.Cookies == null)
+            if (Request.Cookies["loggedInStatus"] == null)
             {
             var cookieOptions = new CookieOptions();
             cookieOptions.Path = "/";

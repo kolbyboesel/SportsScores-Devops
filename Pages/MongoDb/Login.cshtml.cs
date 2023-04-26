@@ -67,7 +67,6 @@ public class LoginModel : PageModel
         {
             var users = JsonSerializer.Deserialize<DocumentsModel>(response.Content);
             var currentUser = users.Documents.FirstOrDefault(x => string.Equals(x.LoginId, username, StringComparison.OrdinalIgnoreCase));
-            var cookie = Request.Cookies["loggedInStatus"];
 
             if (currentUser == null)
             {
@@ -75,12 +74,17 @@ public class LoginModel : PageModel
             }
             else
             {
-                if (currentUser.PasswordId == password)
+                if (currentUser.PasswordId == password && currentUser.PaidConfirm == "Yes")
                 {
                     Response.Cookies.Append("loggedInStatus", "true");
+                    Response.Cookies.Append("PaidConfirm", "Yes");
+                    Response.Cookies.Append("CurrentUser", username);
                     Response.Redirect("/AccountHome");
+                } else
+                {
+                    Response.Cookies.Append("PaidConfirm", "No");
+                    Response.Redirect("/Payment");
                 }
-                ViewData["ErrorMessage"] = "Error: Username already taken";
             }
             ViewData["ErrorMessage"] = "Invalid password";
         }

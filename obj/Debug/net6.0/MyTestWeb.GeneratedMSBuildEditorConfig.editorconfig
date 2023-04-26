@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWNjb3VudEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/ConfirmPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ29uZmlybVBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

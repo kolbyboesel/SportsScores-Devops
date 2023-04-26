@@ -38,10 +38,13 @@ public class SignupModel : PageModel
                 {
                     LoginID = username,
                     PasswordID = password,
+                    PaidConfirm = "No",
                 };
 
                 await _newUser.InsertOneAsync(newUser);
-
+                Response.Cookies.Append("CurrentUser", username);
+                Response.Cookies.Append("CurrentPassword", password);
+                Response.Cookies.Append("PaidConfirm", "No");
                 Response.Redirect("/Payment");
             }
             else
@@ -63,5 +66,7 @@ public class SignupModel : PageModel
         public ObjectId _id { get; set; }
         public string LoginID { get; set; }
         public string PasswordID { get; set; }
+        public string PaidConfirm { get; set; }
+
 
     }

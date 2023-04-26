@@ -23,7 +23,6 @@ static class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
-
         app.UseRouting();
 
         app.MapRazorPages();

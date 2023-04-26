@@ -10,5 +10,8 @@ public class LoginInfoResponseModel
     
     [JsonPropertyName("PasswordID")]
     public string PasswordId { get; set; }
+
+    [JsonPropertyName("PaidConfirm")]
+    public string PaidConfirm { get; set; }
 }
 
