@@ -17,10 +17,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<head>
+  <title>Account Home</title>
+  <link rel="icon" type="images/x-icon" href="https://banner2.cleanpng.com/20180219/ssw/kisspng-sport-baseball-play-clip-art-sports-star-cliparts-5a8a64433d6d00.6495583115190190752516.jpg">
+</head>
 <body style="background-color: beige;">
 
-<header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 55px;">
+<header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 35px;">
         <h1 class="w3-margin w3-jumbo"
           style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Account Home</h1>
         </header>
@@ -32,7 +35,7 @@
             
             <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%; position: unset">
               <button class="dropbtn w3-hover-text-black" onclick=showBestDropdown()>AI Best Bets
-                <i class="fa fa-caret-down"></i>
+                <span class="caret"></span>
               </button>
               <div class="dropdown-content w3-mobile" id="BestDropdown" style="display: none;">
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showNBABets();showBestDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>
@@ -43,7 +46,7 @@
 
             <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%; position: unset">
               <button class="dropbtn w3-hover-text-black" onclick=showKolbysDropdown()>Kolby's Picks
-                <i class="fa fa-caret-down"></i>
+                <span class="caret"></span>
               </button>
               <div class="dropdown-content w3-mobile" id="KolbysDropdown" style="display: none;">
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showKolbysNBA();showKolbysDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>

@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets/images/espnLogo.png"
     },
     {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/favicon.jpg",
+      "PackagePath": "staticwebassets/images/favicon.jpg"
+    },
+    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/mlbLogo.png",
       "PackagePath": "staticwebassets/images/mlbLogo.png"
     },

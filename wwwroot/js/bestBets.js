@@ -143,8 +143,8 @@ async function showNHLBets() {
 }
 
 function round(value) {
-  let temp = Math.round(value * 100) / 100;
-  let returnValue = String(temp).slice(0, 4);
+  let temp = Math.ceil(value * 100) / 100;
+  let returnValue = temp.toString().substring(0,4);
   return returnValue;
 }
 
@@ -166,8 +166,8 @@ function buildBestBetBoard(allOdds, containerName) {
     ) {
       homeTeam = currentGame.home_team_name;
       awayTeam = currentGame.away_team_name;
-      homeMoneylineVal = round(currentGame.rank_htw_nt);
-      awayMoneylineVal = round(currentGame.rank_atw_nt);
+      homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
+      awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
       html += generateBestBetsBoard(
         currentGame,
         homeTeam,

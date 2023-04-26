@@ -66,6 +66,8 @@ body {
 @media screen and (max-width: 768px) {
   .mobileNavbar {
     display: none;
+    position: fixed !important;
+    right: 5% !important;
     width: 25% !important;
     float: right !important;
     align-content: center !important;
