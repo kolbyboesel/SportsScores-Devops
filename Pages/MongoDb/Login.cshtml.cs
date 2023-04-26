@@ -80,13 +80,15 @@ public class LoginModel : PageModel
                     Response.Cookies.Append("PaidConfirm", "Yes");
                     Response.Cookies.Append("CurrentUser", username);
                     Response.Redirect("/AccountHome");
-                } else
+                } else if(currentUser.PaidConfirm == "No")
                 {
                     Response.Cookies.Append("PaidConfirm", "No");
                     Response.Redirect("/Payment");
                 }
+                else{
+                    ViewData["ErrorMessage"] = "Invalid password";
+                }
             }
-            ViewData["ErrorMessage"] = "Invalid password";
         }
     }
 }

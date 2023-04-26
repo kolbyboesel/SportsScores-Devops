@@ -1,3 +1,7 @@
+.colorIndex{
+  background-color: transparent!important;
+}
+
 /*Signup Form*/
 /* Extra style for the cancel button (red) */
 .cancelbtn {
@@ -44,7 +48,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 678px) {
   span.psw {
     display: block;
     float: none;
