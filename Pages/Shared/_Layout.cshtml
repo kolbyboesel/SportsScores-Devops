@@ -15,14 +15,14 @@
 <nav class="navbar navbar-inverse" style="position: fixed; width: 100%; border-width: 0; background-color:transparent!important">
   <div class="container-fluid" style="display: block;">
     <div class="navbar-header" style="width=100%">
-      <button type="button" id="navbar-btn" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="width: auto; border-color:white">
+      <button type="button" class="navbar-toggle" id="navbar-btn" onclick=toggleNav() style="width: auto; border-color:white; margin-right:9%!important;">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand w3-hover-white" href="/Index" style="color: white">Sport Scores</a>
     </div>
-    <div class="mobileNavbar collapse navbar-collapse" id="myNavbar">
+    <div class="mobileNavbar" id="myNavbar">
       <ul class="nav navbar-nav" style="display: block;">
         <li><a class="w3-hover-white" href="/NBA" style="color: white; text-align:center">NBA</a></li>
         <li><a class="w3-hover-white" href="/MLB" style="color: white; text-align:center">MLB</a></li>
@@ -31,10 +31,10 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right" style="display: block;">
-        <li><a id="loginBtn" class="w3-hover-white" href="/MongoDb/Signup" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a id="signupBtn" class="w3-hover-white" href="/MongoDb/Login" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a id="logoutBtn" class="w3-hover-white" href="/Signout" style="color: white; text-align:center; display: block"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-        <li><a id="accountBtn" class="w3-hover-white" href="/AccountHome" style="color: white; text-align:center; display: none"><span class="glyphicon glyphicon-user"></span> Account Home</a></li>
+        <li><a id="loginBtn" class="w3-hover-white" href="/MongoDb/Signup" style="color: white; text-align:center; display: block; width: 100%;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a id="signupBtn" class="w3-hover-white" href="/MongoDb/Login" style="color: white; text-align:center; display: block; width: 100%;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a id="logoutBtn" class="w3-hover-white" href="/Signout" style="color: white; text-align:center; display: none; width: 100%;"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        <li><a id="accountBtn" class="w3-hover-white" href="/AccountHome" style="color: white; text-align:center; display: none; width: 100%;"><span class="glyphicon glyphicon-user"></span> Account Home</a></li>
       </ul>
     </div>
   </div>
@@ -47,18 +47,51 @@
     if (parts.length === 2){
       result = parts.pop().split(';').shift();
     }
-    if(result == "true"){
-      document.getElementById("loginBtn").style.display = "none";
-      document.getElementById("signupBtn").style.display = "none";
-      document.getElementById("logoutBtn").style.display = "block";
-      document.getElementById("accountBtn").style.display = "block";
+    if(window.innerWidth < 600){
+      if(result == "true"){
+        document.getElementById("loginBtn").style.display = "none";
+        document.getElementById("signupBtn").style.display = "none";
+        document.getElementById("logoutBtn").style.display = "inline-grid";
+        document.getElementById("accountBtn").style.display = "inline-grid";
+      }
+      else{
+        document.getElementById("loginBtn").style.display = "inline-grid";
+        document.getElementById("signupBtn").style.display = "inline-grid";
+        document.getElementById("logoutBtn").style.display = "none";
+        document.getElementById("accountBtn").style.display = "none";
+      }
+    } else
+    {
+      if(result == "true"){
+        document.getElementById("loginBtn").style.display = "none";
+        document.getElementById("signupBtn").style.display = "none";
+        document.getElementById("logoutBtn").style.display = "block";
+        document.getElementById("accountBtn").style.display = "block";
+      }
+      else{
+        document.getElementById("loginBtn").style.display = "block";
+        document.getElementById("signupBtn").style.display = "block";
+        document.getElementById("logoutBtn").style.display = "none";
+        document.getElementById("accountBtn").style.display = "none";
+      }
     }
-    else{
-      document.getElementById("loginBtn").style.display = "block";
-      document.getElementById("signupBtn").style.display = "block";
-      document.getElementById("logoutBtn").style.display = "none";
-      document.getElementById("accountBtn").style.display = "none";
+</script>
+
+<script>
+function toggleNav() {
+  document.getElementById("myNavbar").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+    if (!e.target.matches('.navbar-toggle')) 
+    {
+      var bestDropdown = document.getElementById("myNavbar");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
     }
+  }
 </script>
 
     <div style="width: 100%; height: 100%;">

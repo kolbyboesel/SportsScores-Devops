@@ -57,19 +57,28 @@ body {
   font-size: 4vh;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .mobileScreen {
     width: 96% !important;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .mobileNavbar {
+    display: none;
     width: 25% !important;
     float: right !important;
     align-content: center !important;
     background-color: black !important;
-  }
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
 }
 
 /*General style for score and bet containers across the site*/

@@ -14,15 +14,7 @@ namespace MyTestWeb.Pages
         }
 
         public void OnGet()
-        {   
-            
-            if (Request.Cookies["loggedInStatus"] == null)
-            {
-            var cookieOptions = new CookieOptions();
-            cookieOptions.Path = "/";
-            cookieOptions.Expires = DateTime.Now.AddMinutes(10);
-            Response.Cookies.Append("loggedInStatus", "false", cookieOptions);
-            }
+        {
         }
     }
 }
