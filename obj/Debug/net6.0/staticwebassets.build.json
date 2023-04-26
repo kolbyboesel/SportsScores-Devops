@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/PCXdIa25DjKCG0DLQCnnuxC0dK/Lb8QOCeYAKZbfDw=",
+  "Hash": "R7qBC1HE3Oe+Cb5BxlWCOe7LkfXyvlhu/f3BW/IRUG0=",
   "Source": "MyTestWeb",
   "BasePath": "_content/MyTestWeb",
   "Mode": "Default",
@@ -253,23 +253,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/espnLogo.png"
-    },
-    {
-      "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/favicon.jpg",
-      "SourceId": "MyTestWeb",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/",
-      "BasePath": "_content/MyTestWeb",
-      "RelativePath": "images/favicon.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/favicon.jpg"
     },
     {
       "Identity": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/logo_transparent.png",

@@ -53,10 +53,6 @@
       "PackagePath": "staticwebassets/images/espnLogo.png"
     },
     {
-      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/favicon.jpg",
-      "PackagePath": "staticwebassets/images/favicon.jpg"
-    },
-    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/logo_transparent.png",
       "PackagePath": "staticwebassets/images/logo_transparent.png"
     },
