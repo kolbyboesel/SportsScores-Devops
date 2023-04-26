@@ -27,8 +27,7 @@ public class SignupModel : PageModel
         var password = Request.Form["password"];
         var confirm_password = Request.Form["password-repeat"];
 
-        var filter = Builders<User>.Filter
-            .Eq(r => r.LoginID, username.ToString());
+        var filter = Builders<User>.Filter.Eq(r => r.LoginID, username.ToString());
 
         if (_newUser.Find(filter).FirstOrDefault() == null)
         {
