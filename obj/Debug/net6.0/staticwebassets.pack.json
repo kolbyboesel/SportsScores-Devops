@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets/images/favicon.jpg"
     },
     {
+      "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/logo_transparent.png",
+      "PackagePath": "staticwebassets/images/logo_transparent.png"
+    },
+    {
       "Id": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/wwwroot/images/mlbLogo.png",
       "PackagePath": "staticwebassets/images/mlbLogo.png"
     },
