@@ -25,3 +25,5 @@ steps:
     ResourceGroupName: 'sports-scores'
     SlotName: 'production'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+- task: PublishBuildArtifacts@1
