@@ -20,20 +20,51 @@ let underOdds = 0;
 let completedDate = 0;
 
 async function showNBAOdds() {
-  buildOddsBoard(await getData(NBA_URL), "containerNBA");
+  let html = "";
+  html += buildOddsBoard(await getData(NBA_URL));
+  let container = document.querySelector("." + "containerNBA");
+  container.innerHTML = html;
 }
 async function showMLBOdds() {
-  buildOddsBoard(await getData(MLB_URL), "containerMLB");
+  let html = "";
+  html += buildOddsBoard(await getData(MLB_URL));
+  let container = document.querySelector("." + "containerMLB");
+  container.innerHTML = html;
 }
 async function showNFLOdds() {
-  buildOddsBoard(await getData(NFL_URL), "containerNFL");
+  let html = "";
+  html += buildOddsBoard(await getData(NFL_URL));
+  let container = document.querySelector("." + "containerNFL");
+  container.innerHTML = html;
 }
 async function showNHLOdds() {
-  buildOddsBoard(await getData(NHL_URL), "containerNHL");
+  let html = "";
+  html += buildOddsBoard(await getData(NHL_URL));
+  let container = document.querySelector("." + "containerNHL");
+  container.innerHTML = html;
 }
 
-async function buildOddsBoard(allOdds, containerName) {
-  clear(containerName);
+async function showAllOdds() {
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
+
+  html += `<br><div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;text-decoration: underline">NBA Odds</div>`;
+  html += buildOddsBoard(await getData(NBA_URL));
+  html += `<br><div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;text-decoration: underline">MLB Odds</div>`;
+
+  html += buildOddsBoard(await getData(MLB_URL));
+  html += `<br><div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;text-decoration: underline">NFL Odds</div>`;
+
+  html += buildOddsBoard(await getData(NFL_URL));
+  html += `<br><div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;text-decoration: underline">NHL Odds</div>`;
+
+  html += buildOddsBoard(await getData(NHL_URL));
+
+  let container = document.querySelector("." + "AccountContainer");
+  container.innerHTML = html;
+}
+
+function buildOddsBoard(allOdds) {
 
   let html = "";
   allOdds.forEach((currentGame) => {
@@ -43,8 +74,7 @@ async function buildOddsBoard(allOdds, containerName) {
 
     html += generateOddsBoard(currentGame);
   });
-  let container = document.querySelector("." + containerName);
-  container.innerHTML = html;
+  return html;
 }
 
 function formatDate(rawDate) {

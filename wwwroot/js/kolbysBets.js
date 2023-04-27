@@ -33,7 +33,6 @@ function showKolbysNBA() {
     </div>`;
 
   let container = document.querySelector(".AccountContainer");
-  console.log(htmlSegment);
   container.innerHTML = htmlSegment;
 }
 

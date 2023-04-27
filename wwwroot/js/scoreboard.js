@@ -23,44 +23,87 @@ async function getData(url) {
 }
 
 async function showNBAScores() {
-  buildScoreboard(
+  let html = "";
+  html = buildScoreboard(
     await getData(
       "https://odds.p.rapidapi.com/v4/sports/basketball_nba/scores?daysFrom=1"
     ),
     "containerNBA"
   );
+
+  let container = document.querySelector("." + "containerNBA");
+  container.innerHTML = html;
 }
 
 async function showMLBScores() {
-  buildScoreboard(
+  let html = "";
+  html = buildScoreboard(
     await getData(
       "https://odds.p.rapidapi.com/v4/sports/baseball_mlb/scores?daysFrom=1"
     ),
     "containerMLB"
   );
+
+  let container = document.querySelector("." + "containerMLB");
+  container.innerHTML = html;
 }
 
 async function showNFLScores() {
-  buildScoreboard(
+  let html = "";
+  html = buildScoreboard(
     await getData(
       "https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl/scores?daysFrom=1"
     ),
     "containerNFL"
   );
+  let container = document.querySelector("." + "containerNFL");
+  container.innerHTML = html;
 }
 
 async function showNHLScores() {
-  buildScoreboard(
+  let html = "";
+  html += buildScoreboard(
     await getData(
       "https://odds.p.rapidapi.com/v4/sports/icehockey_nhl/scores?daysFrom=1"
     ),
     "containerNHL"
   );
+
+  let container = document.querySelector("." + "containerNHL");
+  container.innerHTML = html;
 }
 
-async function buildScoreboard(allScores, containerName) {
-  clear(containerName);
+async function showTopScores() {
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
 
+  html += `<br><div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;text-decoration: underline">Live Scores</div>`;
+  html += buildScoreboard(
+    await getData(
+      "https://odds.p.rapidapi.com/v4/sports/basketball_nba/scores"
+    ),
+    "AccountContainer"
+  );
+
+  html += buildScoreboard(
+    await getData("https://odds.p.rapidapi.com/v4/sports/baseball_mlb/scores"),
+    "AccountContainer"
+  );
+
+  html += buildScoreboard(
+    await getData("https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl/scores"),
+    "AccountContainer"
+  );
+
+  html += buildScoreboard(
+    await getData("https://odds.p.rapidapi.com/v4/sports/icehockey_nhl/scores"),
+    "AccountContainer"
+  );
+  let container = document.querySelector(".AccountContainer");
+  container.innerHTML = html;
+}
+
+function buildScoreboard(allScores, containerName) {
   let html = "";
   allScores.forEach((currentScore) => {
     let awayScore = 0;
@@ -90,17 +133,17 @@ async function buildScoreboard(allScores, containerName) {
       awayScore,
       homeScore,
       winningTeam,
-      completedDate
+      completedDate,
+      containerName
     );
   });
-  let container = document.querySelector("." + containerName);
-  container.innerHTML = html;
+  return html;
 }
 
 function formatDate(rawDate) {
   let dateTimeValue = Date.parse(rawDate);
   let dateRaw = new Date(dateTimeValue);
-  
+
   return (
     dateRaw.toLocaleDateString() +
     " Start Time: " +
@@ -113,19 +156,20 @@ function generateScoreboard(
   awayScore,
   homeScore,
   winningTeam,
-  dateTimeValue
+  dateTimeValue,
+  containerName
 ) {
   let htmlSegment = `<div class="outer mobileScreen"><div class="scoreboard">`;
-  let gameStatus;
+    let gameStatus;
 
-  if (currentScore.completed) {
-    gameStatus = "FINAL";
-  } else {
-    gameStatus = "INP/TBD";
-  }
+    if (currentScore.completed) {
+      gameStatus = "FINAL";
+    } else {
+      gameStatus = "INP/TBD";
+    }
 
-  if (winningTeam === currentScore.away_team) {
-    htmlSegment += `<div class="header">
+    if (winningTeam === currentScore.away_team) {
+      htmlSegment += `<div class="header">
     <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
     <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%"">${gameStatus}</div>
   </div>
@@ -137,8 +181,8 @@ function generateScoreboard(
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>
       </div>`;
-  } else {
-    htmlSegment += `<div class="header">
+    } else {
+      htmlSegment += `<div class="header">
     <div class="headerDate" style="width: 75%; justify-content: left">${dateTimeValue}</div>
     <div class="headerElement" style="width: 5%; justify-content: center; margin: 10%">${gameStatus}</div>
   </div>
@@ -150,7 +194,8 @@ function generateScoreboard(
         <div class="team">${currentScore.home_team}</div>
         <div class="score">${homeScore}</div>
       </div>`;
-  }
+    }
+  
 
   htmlSegment += `</div>
   </div>`;

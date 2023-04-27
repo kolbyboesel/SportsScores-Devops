@@ -10,28 +10,40 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
 <link rel="stylesheet" href="~/css/kolbyPicks.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/betBoard.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/bestBet.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/scoreboard.css" asp-append-version="true" />
 <script src="~/js/bestBets.js" asp-append-version="true"></script>
 <script src="~/js/kolbysBets.js" asp-append-version="true"></script>
+<script src="~/js/scoreboard.js" asp-append-version="true"></script>
+<script src="~/js/betBoard.js" asp-append-version="true"></script>
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <head>
-  <title>Account Home</title>
+  <title>Account Hub</title>
   <link rel="icon" type="images/x-icon" href="https://banner2.cleanpng.com/20180219/ssw/kisspng-sport-baseball-play-clip-art-sports-star-cliparts-5a8a64433d6d00.6495583115190190752516.jpg">
 </head>
 <body style="background-color: beige;">
 
 <header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 35px;">
         <h1 class="w3-margin w3-jumbo"
-          style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Account Home</h1>
+          style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Account Hub</h1>
         </header>
 
         <div class="w3" width=100%>
           <div class="w3-bar w3-red" width=100%>
-            <a href="/AccountHome" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 25%; height: 50px; font-size:16px; padding:15px;">Home</a>
+
+            <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%; position: unset">
+              <button class="dropbtn w3-hover-text-black" onclick=showHomeDropdown()>Home
+                <span class="caret"></span>
+              </button>
+              <div class="dropdown-content w3-mobile" id="HomeDropdown" style="display: none;">
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showAllOdds();showHomeDropdown() style="border-left: none; border-top:none; border-right:none;">Betting Odds</a>
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showTopScores();showHomeDropdown() style="border: none;">Live Scores</a>
+              </div>
+            </div>
             
             <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%; position: unset">
               <button class="dropbtn w3-hover-text-black" onclick=showBestDropdown()>AI Best Bets
@@ -55,13 +67,23 @@
               </div>
             </div>
 
-            <a href="/AccountHome" class="w3-bar-item w3-button w3-mobile w3-hover-white"
-              style="width: 25%; height: 50px; font-size:16px; padding:15px;">Account Settings</a>
+             <div class="dropdown w3-mobile w3-red w3-hover-white" style="width: 25%; position: unset">
+              <button class="dropbtn w3-hover-text-black" onclick=showSettingsDropdown()>Account Settings
+                <span class="caret"></span>
+              </button>
+              <div class="dropdown-content w3-mobile" id="settingsDropdown" style="display: none;">
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showSettingsDropdown() style="border-left: none; border-top:none; border-right:none;">Update Email</a>
+                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showSettingsDropdown() style="border: none;">Change Password</a>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="AccountContainer"></div>
 
+        <script type="text/javascript">
+          showAllOdds();
+        </script>
         <footer class="footer text-muted">
         <div class="container footerText">
             &copy; 2023 - SportsScores - <a style="color: black;" asp-area="" asp-page="/Privacy">Privacy</a>
@@ -71,12 +93,38 @@
         <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
+
+function showHomeDropdown() {
+  document.getElementById("HomeDropdown").classList.add('show');
+      var bestDropdown = document.getElementById("BestDropdown");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
+      var kolbyDropdown = document.getElementById("KolbysDropdown");
+      if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+      }
+      var bestDropdown = document.getElementById("settingsDropdown");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
+  }
+
 function showBestDropdown() {
   document.getElementById("BestDropdown").classList.toggle("show");
   var kolbyDropdown = document.getElementById("KolbysDropdown");
     if (kolbyDropdown.classList.contains('show')) {
       kolbyDropdown.classList.remove('show');
     }
+      var bestDropdown = document.getElementById("settingsDropdown");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
+
+      var kolbyDropdown = document.getElementById("HomeDropdown");
+      if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+      }
 }
 
 function showKolbysDropdown() {
@@ -84,6 +132,30 @@ function showKolbysDropdown() {
   var bestDropdown = document.getElementById("BestDropdown");
       if (bestDropdown.classList.contains('show')) {
         bestDropdown.classList.remove('show');
+      }
+      var bestDropdown = document.getElementById("settingsDropdown");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
+      var kolbyDropdown = document.getElementById("HomeDropdown");
+      if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+      }
+  }
+
+  function showSettingsDropdown() {
+  document.getElementById("settingsDropdown").classList.toggle("show");
+      var bestDropdown = document.getElementById("BestDropdown");
+      if (bestDropdown.classList.contains('show')) {
+        bestDropdown.classList.remove('show');
+      }
+      var kolbyDropdown = document.getElementById("KolbysDropdown");
+      if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+      }
+      var kolbyDropdown = document.getElementById("HomeDropdown");
+      if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
       }
   }
 
@@ -100,7 +172,16 @@ window.onclick = function(e) {
     if (kolbyDropdown.classList.contains('show')) {
       kolbyDropdown.classList.remove('show');
     }
-  }
+
+    var kolbyDropdown = document.getElementById("settingsDropdown");
+    if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+    }
+    var kolbyDropdown = document.getElementById("HomeDropdown");
+    if (kolbyDropdown.classList.contains('show')) {
+      kolbyDropdown.classList.remove('show');
+      }
+    }
   }
 </script>
 </body>
