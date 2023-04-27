@@ -44,6 +44,73 @@ async function showNHLOdds() {
   container.innerHTML = html;
 }
 
+async function showAccountMLB(){
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
+  html += `<div class="container" style="width: 100%; align-content:center"><div class="scrollmenu mobileScroll">
+  <a onclick=showAccountNBA() class="w3-hover-text-black">NBA</a>
+  <a onclick=showAccountMLB() style="color:black">MLB</a>
+  <a onclick=showAccountNHL() class="w3-hover-text-black">NHL</a>
+  <a onclick=showAccountNFL() class="w3-hover-text-black">NFL</a>
+  </div>
+  </div>`
+
+  html += buildOddsBoard(await getData(MLB_URL));
+
+  let container = document.querySelector("." + "AccountContainer");
+  container.innerHTML = html;
+}
+
+async function showAccountNBA(){
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
+  html += `<div class="container" style="width: 100%; align-content:center"><div class="scrollmenu mobileScroll">
+  <a onclick=showAccountNBA() style="color:black">NBA</a>
+  <a onclick=showAccountMLB() class="w3-hover-text-black">MLB</a>
+  <a onclick=showAccountNHL() class="w3-hover-text-black">NHL</a>
+  <a onclick=showAccountNFL() class="w3-hover-text-black">NFL</a>
+  </div></div>`
+
+  html += buildOddsBoard(await getData(NBA_URL));
+
+  let container = document.querySelector("." + "AccountContainer");
+  container.innerHTML = html;
+}
+
+async function showAccountNFL(){
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
+  html += `<div class="container" style="width: 100%; align-content:center"><div class="scrollmenu mobileScroll">
+  <a onclick=showAccountNBA() class="w3-hover-text-black">NBA</a>
+  <a onclick=showAccountMLB() class="w3-hover-text-black">MLB</a>
+  <a onclick=showAccountNHL() class="w3-hover-text-black">NHL</a>
+  <a onclick=showAccountNFL() style="color:black">NFL</a>
+  </div>
+  </div>`
+
+  html += buildOddsBoard(await getData(NFL_URL));
+
+  let container = document.querySelector("." + "AccountContainer");
+  container.innerHTML = html;
+}
+
+async function showAccountNHL(){
+  let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
+  html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
+  html += `<div class="container" style="width: 100%; align-content:center"><div class="scrollmenu mobileScroll">
+  <a onclick=showAccountNBA() class="w3-hover-text-black">NBA</a>
+  <a onclick=showAccountMLB() class="w3-hover-text-black">MLB</a>
+  <a onclick=showAccountNHL() style="color:black">NHL</a>
+  <a onclick=showAccountNFL() class="w3-hover-text-black">NFL</a>
+  </div>
+  </div>`
+
+  html += buildOddsBoard(await getData(NHL_URL));
+
+  let container = document.querySelector("." + "AccountContainer");
+  container.innerHTML = html;
+}
+
 async function showAllOdds() {
   let html = `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 4vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Thanks for subscribing to Kolby's Picks!</div>`;
   html += `<div style="width: 100%; height: 1%; padding-top: 2%; text-align: center; display: inline-block; font-size: 3vh; font-family: Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;">Click one of the buttons above to view AI moneyline bets or my daily picks</div>`;
