@@ -20,6 +20,8 @@ namespace MyTestWeb.Pages
             var verifyPaid = Request.Cookies["PaidConfirm"];
             var changedPassword = Request.Cookies["ChangedPassword"];
             var changedEmail = Request.Cookies["ChangedEmail"];
+            var signedUp = Request.Cookies["signedUp"];
+            var loggedIn = Request.Cookies["loggedIn"];
             if(verifyPaid == "Yes"){
                 if(changedPassword == "yes"){
                     ViewData["successAcc"] = "Password changed successfully!";
@@ -28,6 +30,14 @@ namespace MyTestWeb.Pages
                 if(changedEmail == "yes"){
                     ViewData["successAcc"] = "Email changed successfully!";
                     Response.Cookies.Delete("ChangedEmail");
+                }
+                if(signedUp == "yes"){
+                    ViewData["successAcc"] = "Account created successfully!";
+                    Response.Cookies.Delete("signedUp");
+                }
+                if(loggedIn == "yes"){
+                    ViewData["successAcc"] = "Successfully logged in!";
+                    Response.Cookies.Delete("loggedIn");
                 }
             }
             else{

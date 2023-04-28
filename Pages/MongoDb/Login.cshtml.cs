@@ -79,6 +79,7 @@ public class LoginModel : PageModel
                     Response.Cookies.Append("loggedInStatus", "true");
                     Response.Cookies.Append("PaidConfirm", "Yes");
                     Response.Cookies.Append("CurrentUser", username);
+                    Response.Cookies.Append("loggedIn", "yes");
                     Response.Redirect("/AccountHome");
                 } else if(currentUser.PaidConfirm == "No")
                 {

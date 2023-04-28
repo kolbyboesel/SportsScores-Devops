@@ -46,6 +46,7 @@ public class SignupModel : PageModel
                 Response.Cookies.Append("CurrentUser", username);
                 Response.Cookies.Append("CurrentPassword", password);
                 Response.Cookies.Append("PaidConfirm", "No");
+                Response.Cookies.Append("signedUp", "yes");
                 Response.Redirect("/Payment");
             }
             else

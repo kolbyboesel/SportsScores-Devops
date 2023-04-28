@@ -23,8 +23,8 @@ function showKolbysNBA() {
  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
   <div class="pick">
        <div class="pickNo">3. </div>
-       <div class="pickName">Kings/Warriors TBD</div>
-       <div class="pickLine">TBD</div>
+       <div class="pickName">Jordan Poole O 15.5 Points / Keegan Murray O 10.5 Points</div>
+       <div class="pickLine">+154</div>
      </div>
    </div>
  </div>`;
@@ -32,8 +32,8 @@ function showKolbysNBA() {
  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
   <div class="pick">
        <div class="pickNo">4. </div>
-       <div class="pickName">Kings/Warriors TBD</div>
-       <div class="pickLine">TBD</div>
+       <div class="pickName">Klay Thompson O 22.5 Points / De'Aaron Fox O 11.5 RA</div>
+       <div class="pickLine">+169</div>
      </div>`;
 
   htmlSegment += `

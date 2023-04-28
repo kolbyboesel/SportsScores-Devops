@@ -15,6 +15,7 @@ namespace MyTestWeb.Pages
 
         public void OnGet()
         {
+
         }
     }
 }

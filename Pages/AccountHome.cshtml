@@ -27,10 +27,10 @@
 </head>
 <body style="background-color: beige;">
 
-  <div class="container" style="height: 18%; padding-top:0; ">
+  <div class="container" style="height: 0px; padding-top:0; ">
     @if (!String.IsNullOrEmpty(ViewData["successAcc"] as string))
     {
-        <div class="alert alert-success alert-dismissible" style="width:80%;position:absolute;margin-top:10px">
+        <div class="alert alert-success alert-dismissible" style="width:100%;position:relative;margin-top:10px">
           <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
           @ViewData["successAcc"]
         </div> 
