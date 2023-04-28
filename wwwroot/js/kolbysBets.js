@@ -5,8 +5,8 @@ function showKolbysNBA() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
-        <div class="pickName">De'Andre Hunter O 13.5 Points / Dejounte Murray O 20.5 Points</div>
-        <div class="pickLine">+169</div>
+        <div class="pickName">Anthony Davis O 39.5 PRA / Jaren Jackson O 0.5 Assists</div>
+        <div class="pickLine">+126</div>
       </div>
     </div>
   </div>`;
@@ -14,8 +14,8 @@ function showKolbysNBA() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
   <div class="pick">
        <div class="pickNo">2. </div>
-       <div class="pickName">Trae Young O 8.5 Assists / Al Horford O 6.5 Rebounds</div>
-       <div class="pickLine">+190</div>
+       <div class="pickName">Austin Reaves O 14.5 Points / Desmond Bane O 3.5 Assists</div>
+       <div class="pickLine">+141</div>
      </div>
    </div>
  </div>`;
@@ -23,8 +23,17 @@ function showKolbysNBA() {
  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
   <div class="pick">
        <div class="pickNo">3. </div>
-       <div class="pickName">Derrick White O 14.5 Points / Malcom Brogdon O 2.5 Assists</div>
-       <div class="pickLine">+113</div>
+       <div class="pickName">Kings/Warriors TBD</div>
+       <div class="pickLine">TBD</div>
+     </div>
+   </div>
+ </div>`;
+
+ htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
+  <div class="pick">
+       <div class="pickNo">4. </div>
+       <div class="pickName">Kings/Warriors TBD</div>
+       <div class="pickLine">TBD</div>
      </div>`;
 
   htmlSegment += `
@@ -44,7 +53,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">1. </div>
         <div class="pickName">Cubs Ml</div>
-        <div class="pickLine">+112</div>
+        <div class="pickLine">-107</div>
       </div>
     </div>
   </div>`;
@@ -53,7 +62,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">2. </div>
         <div class="pickName">Blue Jays Ml</div>
-        <div class="pickLine">-106</div>
+        <div class="pickLine">-107</div>
       </div>
     </div>
   </div>`;
@@ -62,7 +71,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">3. </div>
         <div class="pickName">Braves Ml</div>
-        <div class="pickLine">-131</div>
+        <div class="pickLine">-132</div>
       </div>
     </div>
   </div>`;
@@ -71,7 +80,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">4. </div>
         <div class="pickName">Rays Ml</div>
-        <div class="pickLine">-147</div>
+        <div class="pickLine">-150</div>
       </div>
     </div>
   </div>`;
@@ -80,7 +89,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">5. </div>
         <div class="pickName">Red Sox Ml</div>
-        <div class="pickLine">+104</div>
+        <div class="pickLine">-102</div>
       </div>
     </div>
   </div>`;
@@ -89,7 +98,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">6. </div>
         <div class="pickName">Yankees Ml</div>
-        <div class="pickLine">+188</div>
+        <div class="pickLine">+184</div>
       </div>
     </div>
   </div>`;
@@ -98,7 +107,7 @@ function showKolbysMLB() {
    <div class="pick">
         <div class="pickNo">7. </div>
         <div class="pickName">Brewers Ml</div>
-        <div class="pickLine">-129</div>
+        <div class="pickLine">-134</div>
       </div>`;
 
   htmlSegment += `</div>
