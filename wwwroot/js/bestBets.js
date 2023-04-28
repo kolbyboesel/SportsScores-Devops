@@ -168,7 +168,7 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
-      html += generateBestBetsBoard(
+      html += generateMLBBestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
@@ -186,7 +186,7 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
-      html += generateBestBetsBoard(
+      html += generateNHLBestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
@@ -205,39 +205,119 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
-      html += generateBestBetsBoard(
+      firstOver = round(currentGame.rank_to_lvl2_nt, 2);
+      secondOver = round(currentGame.rank_to_lvl3_nt, 2);
+      thirdOver = round(currentGame.rank_to_lvl4_nt, 2);
+      fourthOver = round(currentGame.rank_to_lvl5_nt, 2);
+      html += generateNBABestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
         homeMoneylineVal,
-        awayMoneylineVal
+        awayMoneylineVal,
+        firstOver,
+        secondOver,
+        thirdOver,
+        fourthOver
       );
     }
   });
   return html;
 }
 
-function generateBestBetsBoard(
+function generateNBABestBetsBoard(
   currentGame,
   homeTeam,
   awayTeam,
   homeMoneylineVal,
-  awayMoneylineVal
+  awayMoneylineVal,
+  firstOver,
+  secondOver,
+  thirdOver,
+  fourthOver
 ) {
   let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
   htmlSegment += `<div class="header">
         <div class="headerElement-team">Team Name</div>
-        <div class="headerElement-best">% Chance to Hit</div>
+        <div class="headerElement-best">Moneyline</div>
       </div>
       <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
         <div class="bestBetTeam">${awayTeam}</div>
-        <div class="bestBetElement">${awayMoneylineVal * 100}</div>
+        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
       </div>
      
       <div class="team">
         <div class="bestBetTeam">${homeTeam}</div>
-        <div class="bestBetElement">${homeMoneylineVal * 100}</div>
+        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
+      </div>`;
+
+  htmlSegment += `
+      </div>
+    </div>`;
+
+  return htmlSegment;
+}
+
+function generateMLBBestBetsBoard(
+  currentGame,
+  homeTeam,
+  awayTeam,
+  homeMoneylineVal,
+  awayMoneylineVal,
+  firstOver,
+  secondOver,
+  thirdOver,
+  fourthOver
+) {
+  let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
+
+  htmlSegment += `<div class="header">
+        <div class="headerElement-team">Team Name</div>
+        <div class="headerElement-best">Moneyline</div>
+      </div>
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
+        <div class="bestBetTeam">${awayTeam}</div>
+        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
+      </div>
+     
+      <div class="team">
+        <div class="bestBetTeam">${homeTeam}</div>
+        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
+      </div>`;
+
+  htmlSegment += `
+      </div>
+    </div>`;
+
+  return htmlSegment;
+}
+
+function generateNHLBestBetsBoard(
+  currentGame,
+  homeTeam,
+  awayTeam,
+  homeMoneylineVal,
+  awayMoneylineVal,
+  firstOver,
+  secondOver,
+  thirdOver,
+  fourthOver
+) {
+  let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
+
+  htmlSegment += `<div class="header">
+        <div class="headerElement-team">Team Name</div>
+        <div class="headerElement-best">Moneyline</div>
+      </div>
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
+        <div class="bestBetTeam">${awayTeam}</div>
+        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
+      </div>
+     
+      <div class="team">
+        <div class="bestBetTeam">${homeTeam}</div>
+        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
       </div>`;
 
   htmlSegment += `
