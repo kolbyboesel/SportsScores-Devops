@@ -39,9 +39,9 @@
               <button class="dropbtn w3-hover-text-black" onclick=showHomeDropdown()>Home
                 <span class="caret"></span>
               </button>
-              <div class="dropdown-content w3-mobile" id="HomeDropdown" style="display: none;">
+              <div class="dropdown-content w3-mobile mobileposition" id="HomeDropdown" style="display: none;">
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showAccountNBA();showHomeDropdown() style="border-left: none; border-top:none; border-right:none;">Betting Odds</a>
-                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showTopScores();showHomeDropdown() style="border: none;">Live Scores</a>
+                <a class="dropdown-link w3-red w3-hover-white" onclick=showTopScores();showHomeDropdown()>Live Scores</a>
               </div>
             </div>
             
@@ -49,7 +49,7 @@
               <button class="dropbtn w3-hover-text-black" onclick=showBestDropdown()>AI Best Bets
                 <span class="caret"></span>
               </button>
-              <div class="dropdown-content w3-mobile" id="BestDropdown" style="display: none;">
+              <div class="dropdown-content w3-mobile mobileposition" id="BestDropdown" style="display: none;">
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showNBABets();showBestDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showMLBBets();showBestDropdown() style="border-left: none; border-top:none; border-right:none;">MLB</a>
                 <a class="dropdown-link w3-red w3-hover-white" onclick=showNHLBets();showBestDropdown()>NHL</a>
@@ -60,7 +60,7 @@
               <button class="dropbtn w3-hover-text-black" onclick=showKolbysDropdown()>Kolby's Picks
                 <span class="caret"></span>
               </button>
-              <div class="dropdown-content w3-mobile" id="KolbysDropdown" style="display: none;">
+              <div class="dropdown-content w3-mobile mobileposition" id="KolbysDropdown" style="display: none;">
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showKolbysNBA();showKolbysDropdown() style="border-left: none; border-top:none; border-right:none;">NBA</a>
                 <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showKolbysMLB();showKolbysDropdown() style="border-left: none; border-top:none; border-right:none;">MLB</a>
                 <a class="dropdown-link w3-red w3-hover-white" onclick=showKolbysNHL();showKolbysDropdown()>NHL</a>
@@ -71,9 +71,9 @@
               <button class="dropbtn w3-hover-text-black" onclick=showSettingsDropdown()>Account Settings
                 <span class="caret"></span>
               </button>
-              <div class="dropdown-content w3-mobile" id="settingsDropdown" style="display: none;">
-                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showSettingsDropdown() style="border-left: none; border-top:none; border-right:none;">Update Email</a>
-                <a class="dropdown-link w3-red w3-hover-white act-divider" onclick=showSettingsDropdown() style="border: none;">Change Password</a>
+              <div class="dropdown-content w3-mobile mobileposition" id="settingsDropdown" style="display: none;">
+                <a class="dropdown-link w3-red w3-hover-white act-divider" href="/ChangeEmail" onclick=showSettingsDropdown() style="border-left: none; border-top:none; border-right:none;">Update Email</a>
+                <a class="dropdown-link w3-red w3-hover-white" href="/ChangePsw" onclick=showSettingsDropdown()>Change Password</a>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@
 toggle between hiding and showing the dropdown content */
 
 function showHomeDropdown() {
-  document.getElementById("HomeDropdown").classList.add('show');
+  document.getElementById("HomeDropdown").classList.toggle('show');
       var bestDropdown = document.getElementById("BestDropdown");
       if (bestDropdown.classList.contains('show')) {
         bestDropdown.classList.remove('show');

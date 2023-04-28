@@ -30,8 +30,9 @@ public class SignupModel : PageModel
         var filter = Builders<User>.Filter
             .Eq(r => r.LoginID, username.ToString());
 
-        if (_newUser.Find(filter).FirstOrDefault() == null)
-        {
+        if(username.ToString().Contains("@")){
+            if (_newUser.Find(filter).FirstOrDefault() == null)
+            {
             if (password == confirm_password)
             {
                 User newUser = new()
@@ -51,10 +52,14 @@ public class SignupModel : PageModel
             {
                 ViewData["ErrorMessageSgnUp"] = "Passwords do not match";
             }
-        }
-        else
-        {
-            ViewData["ErrorMessageSgnUp"] = "Username already taken";
+            }
+            else
+            {
+                ViewData["ErrorMessageSgnUp"] = "Username already taken";
+            }
+        }else{
+            ViewData["ErrorMessageSgnUp"] = "Error: Invalid username format";
+
         }
     }
 

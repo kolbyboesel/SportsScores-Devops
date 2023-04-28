@@ -18434,8 +18434,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/ChangeEmail.cshtml",
+      "TargetPath": "Pages\\ChangeEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/NBA.cshtml",
       "TargetPath": "Pages\\NBA.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/kolbyboesel/Desktop/MyTestWeb/MyTestWeb/Pages/ChangePsw.cshtml",
+      "TargetPath": "Pages\\ChangePsw.cshtml",
       "FileKind": "mvc"
     },
     {
