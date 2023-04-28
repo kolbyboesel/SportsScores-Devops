@@ -49,7 +49,8 @@ public class ChangePswModel : PageModel
                 };
 
                 await _newUser.ReplaceOneAsync(filter, updateUser);
-                
+
+                Response.Cookies.Append("ChangedPassword", "yes");
                 Response.Redirect("/AccountHome");
             }
             else

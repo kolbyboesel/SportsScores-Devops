@@ -27,10 +27,21 @@
 </head>
 <body style="background-color: beige;">
 
+  <div class="container" style="height: 18%; padding-top:0; ">
+    @if (!String.IsNullOrEmpty(ViewData["successAcc"] as string))
+    {
+        <div class="alert alert-success alert-dismissible" style="width:80%;position:absolute;margin-top:10px">
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          @ViewData["successAcc"]
+        </div> 
+    }
+    </div>
+
 <header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 35px;">
         <h1 class="w3-margin w3-jumbo"
           style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Account Hub</h1>
         </header>
+
 
         <div class="w3" width=100%>
           <div class="w3-bar w3-red" width=100%>

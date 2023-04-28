@@ -18,8 +18,17 @@ namespace MyTestWeb.Pages
         public async Task OnGet()
         {
             var verifyPaid = Request.Cookies["PaidConfirm"];
-            
+            var changedPassword = Request.Cookies["ChangedPassword"];
+            var changedEmail = Request.Cookies["ChangedEmail"];
             if(verifyPaid == "Yes"){
+                if(changedPassword == "yes"){
+                    ViewData["successAcc"] = "Password changed successfully!";
+                    Response.Cookies.Delete("ChangedPassword");
+                }
+                if(changedEmail == "yes"){
+                    ViewData["successAcc"] = "Email changed successfully!";
+                    Response.Cookies.Delete("ChangedEmail");
+                }
             }
             else{
                  Response.Redirect("/Payment");

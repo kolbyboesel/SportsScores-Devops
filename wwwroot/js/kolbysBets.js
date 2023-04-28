@@ -1,6 +1,6 @@
 function showKolbysNBA() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets -- Record Since 4/27: 1-2</div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
@@ -38,7 +38,7 @@ function showKolbysNBA() {
 
 function showKolbysMLB() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets -- Record Since 4/27: 3-2</div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
@@ -93,7 +93,7 @@ function showKolbysMLB() {
 
 function showKolbysNHL() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets -- Record Since 4/27: 1-0</div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">

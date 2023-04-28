@@ -50,6 +50,7 @@ public class ChangeEmailModel : PageModel
                     await _newUser.ReplaceOneAsync(filter, updateUser);
 
                     Response.Cookies.Append("CurrentUser", newEmail);
+                    Response.Cookies.Append("ChangedEmail", "yes");
                     Response.Redirect("/AccountHome");
                 } else {
                     ViewData["ErrorMessageCE"] = "Error: Incorrect password";
