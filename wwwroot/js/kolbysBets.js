@@ -1,6 +1,6 @@
 function showKolbysNBA() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets -- Record Since 4/27: 1-2</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=698726683">Click To View Past Picks</a></div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
@@ -38,13 +38,13 @@ function showKolbysNBA() {
 
 function showKolbysMLB() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets -- Record Since 4/27: 3-2</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=0">Click To View Past Picks</a></div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
-        <div class="pickName">Pirates Ml</div>
-        <div class="pickLine">+131</div>
+        <div class="pickName">Cubs Ml</div>
+        <div class="pickLine">+112</div>
       </div>
     </div>
   </div>`;
@@ -52,8 +52,8 @@ function showKolbysMLB() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">2. </div>
-        <div class="pickName">Mariners Ml</div>
-        <div class="pickLine">-114</div>
+        <div class="pickName">Blue Jays Ml</div>
+        <div class="pickLine">-106</div>
       </div>
     </div>
   </div>`;
@@ -61,8 +61,8 @@ function showKolbysMLB() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">3. </div>
-        <div class="pickName">Moneyline Parlay (Twins Ml, Rays Ml)</div>
-        <div class="pickLine">+151</div>
+        <div class="pickName">Braves Ml</div>
+        <div class="pickLine">-131</div>
       </div>
     </div>
   </div>`;
@@ -70,8 +70,8 @@ function showKolbysMLB() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">4. </div>
-        <div class="pickName">Moneyline Parlay (Angels Ml, Yankees Ml)</div>
-        <div class="pickLine">+115</div>
+        <div class="pickName">Rays Ml</div>
+        <div class="pickLine">-147</div>
       </div>
     </div>
   </div>`;
@@ -79,8 +79,26 @@ function showKolbysMLB() {
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">5. </div>
-        <div class="pickName">Moneyline Parlay (Angels Ml, Braves Ml)</div>
-        <div class="pickLine">+118</div>
+        <div class="pickName">Red Sox Ml</div>
+        <div class="pickLine">+104</div>
+      </div>
+    </div>
+  </div>`;
+
+  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
+   <div class="pick">
+        <div class="pickNo">6. </div>
+        <div class="pickName">Yankees Ml</div>
+        <div class="pickLine">+188</div>
+      </div>
+    </div>
+  </div>`;
+
+  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
+   <div class="pick">
+        <div class="pickNo">7. </div>
+        <div class="pickName">Brewers Ml</div>
+        <div class="pickLine">-129</div>
       </div>`;
 
   htmlSegment += `</div>
@@ -93,13 +111,13 @@ function showKolbysMLB() {
 
 function showKolbysNHL() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets -- Record Since 4/27: 1-0</div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=195711033">Click To View Past Picks</a></div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
         <div class="pickNo">1. </div>
-        <div class="pickName">Lightning Ml</div>
-        <div class="pickLine">+135</div>
+        <div class="pickName">No NHL Today</div>
+        <div class="pickLine"></div>
       </div>`;
 
   htmlSegment += `</div>
