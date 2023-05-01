@@ -50,7 +50,7 @@ function getDatePlusOne() {
 async function showNBABets() {
   let currentDate = getCurrentDate();
   let nextDay = getDatePlusOne();
-  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Bets Based on AI Data!</div></div>`;
 
 
   html += buildBestBetBoard(
@@ -74,7 +74,7 @@ async function showNBABets() {
 async function showMLBBets() {
   let currentDate = getCurrentDate();
   let nextDay = getDatePlusOne();
-  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Bets Based on AI Data!</div></div>`;
 
 
   html += buildBestBetBoard(
@@ -98,7 +98,7 @@ async function showMLBBets() {
 async function showNFLBets() {
   let currentDate = getCurrentDate();
   let nextDay = getDatePlusOne();
-  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Bets Based on AI Data!</div></div>`;
 
 
   html += buildBestBetBoard(
@@ -123,7 +123,7 @@ async function showNHLBets() {
   let currentDate = getCurrentDate();
   let nextDay = getDatePlusOne();
   
-  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Moneyline Bets Based on AI Data!</div></div>`;
+  let html = `<div class="bestBetHeader"><div class="headerText"> Pick Your Bets Based on AI Data!</div></div>`;
 
   html += buildBestBetBoard(
     await getBetData(
@@ -145,7 +145,9 @@ async function showNHLBets() {
 function round(value) {
   let temp = Math.ceil(value * 100) / 100;
   let returnValue = temp.toString().substring(0,4);
-  return returnValue;
+  returnValue = returnValue * 100;
+  let newVal = returnValue.toString().substring(0,2);
+  return newVal;
 }
 
 function buildBestBetBoard(allOdds, containerName) {
@@ -168,12 +170,22 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
+      firstOver = round(currentGame.rank_to_65_nt, 2);
+      secondOver = round(currentGame.rank_to_75_nt, 2);
+      thirdOver = round(currentGame.rank_to_85_nt, 2);
+      fourthOver = round(currentGame.rank_to_95_nt, 2);
+      fifthOver = round(currentGame.rank_to_105_nt, 2);
       html += generateMLBBestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
         homeMoneylineVal,
-        awayMoneylineVal
+        awayMoneylineVal,
+        firstOver,
+        secondOver,
+        thirdOver,
+        fourthOver,
+        fifthOver
       );
     }
     if (
@@ -186,12 +198,22 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
+      firstOver = round(currentGame.rank_to_35_nt, 2);
+      secondOver = round(currentGame.rank_to_45_nt, 2);
+      thirdOver = round(currentGame.rank_to_55_nt, 2);
+      fourthOver = round(currentGame.rank_to_65_nt, 2);
+      fifthOver = round(currentGame.rank_to_75_nt, 2);
       html += generateNHLBestBetsBoard(
         currentGame,
         homeTeam,
         awayTeam,
         homeMoneylineVal,
-        awayMoneylineVal
+        awayMoneylineVal,
+        firstOver,
+        secondOver,
+        thirdOver,
+        fourthOver,
+        fifthOver
       );
     }
 
@@ -205,10 +227,11 @@ function buildBestBetBoard(allOdds, containerName) {
       awayTeam = currentGame.away_team_name;
       homeMoneylineVal = round(currentGame.rank_htw_nt, 2);
       awayMoneylineVal = round(currentGame.rank_atw_nt, 2);
-      firstOver = round(currentGame.rank_to_lvl2_nt, 2);
-      secondOver = round(currentGame.rank_to_lvl3_nt, 2);
-      thirdOver = round(currentGame.rank_to_lvl4_nt, 2);
-      fourthOver = round(currentGame.rank_to_lvl5_nt, 2);
+      firstOver = round(currentGame.rank_to_lvl1_nt, 2);
+      secondOver = round(currentGame.rank_to_lvl2_nt, 2);
+      thirdOver = round(currentGame.rank_to_lvl3_nt, 2);
+      fourthOver = round(currentGame.rank_to_lvl4_nt, 2);
+      fifthOver = round(currentGame.rank_to_lvl5_nt, 2);
       html += generateNBABestBetsBoard(
         currentGame,
         homeTeam,
@@ -218,7 +241,8 @@ function buildBestBetBoard(allOdds, containerName) {
         firstOver,
         secondOver,
         thirdOver,
-        fourthOver
+        fourthOver,
+        fifthOver
       );
     }
   });
@@ -234,22 +258,40 @@ function generateNBABestBetsBoard(
   firstOver,
   secondOver,
   thirdOver,
-  fourthOver
+  fourthOver,
+  fifthOver
 ) {
   let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
-  htmlSegment += `<div class="header">
+  htmlSegment += `<div class="header" style="height:12.5%">
         <div class="headerElement-team">Team Name</div>
         <div class="headerElement-best">Moneyline</div>
       </div>
-      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none; height:25%">
         <div class="bestBetTeam">${awayTeam}</div>
-        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
+        <div class="bestBetElement">${awayMoneylineVal}%</div>
       </div>
      
-      <div class="team">
+      <div class="team" style="height:25%">
         <div class="bestBetTeam">${homeTeam}</div>
-        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
+        <div class="bestBetElement">${homeMoneylineVal}%</div>
+      </div>
+      
+      <div class="header" style="height:17.5%">
+        <div class="headerElement-over">Over 197.5</div>
+        <div class="headerElement-over">Over 205.5</div>
+        <div class="headerElement-over">Over 213.5</div>
+        <div class="headerElement-over">Over 221.5</div>
+        <div class="headerElement-over">Over 229.5</div>
+      </div>
+      
+      <div class="team" style="height:20%">
+        <div class="bestBetOver">${firstOver}%</div>
+        <div class="bestBetOver">${secondOver}%</div>
+        <div class="bestBetOver">${thirdOver}%</div>
+        <div class="bestBetOver">${fourthOver}%</div>
+        <div class="bestBetOver">${fifthOver}%</div>
+
       </div>`;
 
   htmlSegment += `
@@ -272,18 +314,35 @@ function generateMLBBestBetsBoard(
 ) {
   let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
-  htmlSegment += `<div class="header">
+  htmlSegment += `<div class="header" style="height:12.5%">
         <div class="headerElement-team">Team Name</div>
         <div class="headerElement-best">Moneyline</div>
       </div>
-      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none; height:25%"">
         <div class="bestBetTeam">${awayTeam}</div>
-        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
+        <div class="bestBetElement">${awayMoneylineVal}%</div>
       </div>
      
-      <div class="team">
+      <div class="team" style="height:25%">
         <div class="bestBetTeam">${homeTeam}</div>
-        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
+        <div class="bestBetElement">${homeMoneylineVal}%</div>
+      </div> 
+
+      <div class="header" style="height:17.5%">
+      <div class="headerElement-over">Over 6.5</div>
+      <div class="headerElement-over">Over 7.5</div>
+      <div class="headerElement-over">Over 8.5</div>
+      <div class="headerElement-over">Over 9.5</div>
+      <div class="headerElement-over">Over 10.5</div>
+      </div>
+      
+      <div class="team" style="height:20%">
+        <div class="bestBetOver">${firstOver}%</div>
+        <div class="bestBetOver">${secondOver}%</div>
+        <div class="bestBetOver">${thirdOver}%</div>
+        <div class="bestBetOver">${fourthOver}%</div>
+        <div class="bestBetOver">${fifthOver}%</div>
+
       </div>`;
 
   htmlSegment += `
@@ -306,19 +365,36 @@ function generateNHLBestBetsBoard(
 ) {
   let htmlSegment = `<div class="outerBestBets mobileScreen"><div class="bestBets">`;
 
-  htmlSegment += `<div class="header">
+  htmlSegment += `<div class="header" style="height:12.5%">
         <div class="headerElement-team">Team Name</div>
         <div class="headerElement-best">Moneyline</div>
       </div>
-      <div class="team divider" style="border-left: none; border-top:none; border-right:none;">
+      <div class="team divider" style="border-left: none; border-top:none; border-right:none; height:25%"">
         <div class="bestBetTeam">${awayTeam}</div>
-        <div class="bestBetElement">${awayMoneylineVal * 100}%</div>
+        <div class="bestBetElement">${awayMoneylineVal}%</div>
       </div>
      
-      <div class="team">
+      <div class="team" style="height:25%">
         <div class="bestBetTeam">${homeTeam}</div>
-        <div class="bestBetElement">${homeMoneylineVal * 100}%</div>
-      </div>`;
+        <div class="bestBetElement">${homeMoneylineVal}%</div>
+      </div> 
+      
+    <div class="header" style="height:17.5%">
+      <div class="headerElement-over">Over 3.5</div>
+      <div class="headerElement-over">Over 4.5</div>
+      <div class="headerElement-over">Over 5.5</div>
+      <div class="headerElement-over">Over 6.5</div>
+      <div class="headerElement-over">Over 7.5</div>
+    </div>
+    
+    <div class="team" style="height:20%">
+      <div class="bestBetOver">${firstOver}%</div>
+      <div class="bestBetOver">${secondOver}%</div>
+      <div class="bestBetOver">${thirdOver}%</div>
+      <div class="bestBetOver">${fourthOver}%</div>
+      <div class="bestBetOver">${fifthOver}%</div>
+
+    </div>`;
 
   htmlSegment += `
       </div>

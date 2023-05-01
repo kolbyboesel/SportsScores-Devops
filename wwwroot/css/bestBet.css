@@ -6,7 +6,7 @@
 
 .outerBestBets {
   width: 46%;
-  height: 200px;
+  height: 300px;
   margin: 2%;
   border: 10px solid rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -24,7 +24,7 @@
 }
 
 .header {
-  height: 20%;
+  height: 15%;
   width: 100%;
   display: flex;
   background: white;
@@ -55,6 +55,17 @@
   letter-spacing: 2px;
 }
 
+.headerElement-over{
+  border-width: 1px;
+  display: flex;
+  border-color: black;
+  width: 20%;
+  flex-shrink: 0;
+  justify-content: center;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
 .bestBetTeam {
   flex-shrink: 0;
   width: 70%;
@@ -67,6 +78,15 @@
 .bestBetElement {
   flex-shrink: 0;
   width: 30%;
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.bestBetOver {
+  flex-shrink: 0;
+  width: 20%;
   font-size: 1.5vh;
   display: flex;
   justify-content: center;
