@@ -3,7 +3,7 @@ const sendMessage = async (message) => {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
-		'Authorization': 'Bearer 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'
+		'Authorization': 'Bearer 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'
 	  },
 	  body: JSON.stringify({
 		model: "text-davinci-003",
