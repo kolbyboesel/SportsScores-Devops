@@ -7,10 +7,9 @@
     border-color: black;
     border-style: solid;
     width: 90%;
-    left:5%;
-    position: absolute;
+    margin-left:5%;
     margin-top: 5%;
-    height: 65%;
+    min-height: 65vh;
     padding: 2%;
     overflow:auto;
 }
