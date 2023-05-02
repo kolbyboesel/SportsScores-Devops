@@ -52,7 +52,7 @@ messageForm.addEventListener('submit', async (event) => {
   messageInput.value = '';
   appendMessage(`You: ${message}`, 'user');
   const response = await sendMessage(message);
-  appendMessage(`Chatbot: ${response}`, 'chatbot');
+  appendMessage(`OpenAI: ${response}`, 'chatbot');
   chatbox.scrollTop = chatbox.scrollHeight;
 });
 </script>

@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Betalgo.OpenAI": {
+              "target": "Package",
+              "version": "[6.8.5, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.19.1, )"
