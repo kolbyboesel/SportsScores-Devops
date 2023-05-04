@@ -8,7 +8,6 @@ public class SportsAIModel : PageModel
 {
     [BindProperty]
     public string UserInput { get; set; }
-
     public async Task OnPostAsync()
     {
     }

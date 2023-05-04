@@ -29,7 +29,7 @@
     @if (!String.IsNullOrEmpty(ViewData["successAcc"] as string))
     {
         <div class="alert alert-success alert-dismissible" style="width:100%;position:relative;margin-top:10px">
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          <span class="closeAlert">X</span>
           @ViewData["successAcc"]
         </div> 
     }
@@ -228,4 +228,16 @@ window.onclick = function(e) {
   }
 </script>
 
+<script>
+  // Get all elements with class="close"
+  var closebtns = document.getElementsByClassName("closeAlert");
+  var i;
+
+  // Loop through the elements, and hide the parent, when clicked on
+  for (i = 0; i < closebtns.length; i++) {
+    closebtns[i].addEventListener("click", function() {
+      this.parentElement.style.display = 'none';
+    });
+  }
+</script>
 </body>

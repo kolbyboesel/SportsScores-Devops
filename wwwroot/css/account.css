@@ -1,4 +1,11 @@
+/* Style the close button (span) */
+.closeAlert {
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+}
 
+.close:hover {color: gr;}
 
   /* The dropdown container */
   .dropdown {
