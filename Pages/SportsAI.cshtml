@@ -25,7 +25,7 @@
         </header>
 	<div class="AIContainer" style="width: 100vw;height: 75vh; display:inline-block">
 
-   <div class="chatbox" id="chatbox"></div>
+   <div class="chatbox" style="flex-direction: column-reverse; display: flex"><div id="chatbox"></div></div>
    <div class="formContainer">
     <form id="message-form" style="height: 100%;">
       <input class="textinput" type="text" id="message-input" placeholder="Type your message...">
@@ -55,6 +55,5 @@ messageForm.addEventListener('submit', async (event) => {
   appendMessage(`You: ${message}`, 'user');
   const response = await sendMessage(message);
   appendMessage(`OpenAI: ${response}`, 'chatbot');
-  chatbox.scrollTop = chatbox.scrollHeight;
 });
 </script>
