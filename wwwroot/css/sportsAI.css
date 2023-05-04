@@ -8,7 +8,7 @@
     border-style: solid;
     width: 90%;
     margin-left:5%;
-    margin-top: 5%;
+    margin-top: 1%;
     min-height: 65vh;
     max-height: 65vh;
     padding: 2%;
@@ -27,12 +27,16 @@
     }
   }
 
+  .formContainer{
+    height: 12%;
+    width: 90%;
+    margin-left:5%;
+    padding-top: 1%;
+  }
+
 .textinput{
-    width: 70%;
-    bottom: 5%;
-    left: 5%;
-    height: 5%;
-    position: absolute;
+    width: 80%;
+    height: 75%;
     float: left;
     border-radius: 5px;
 
@@ -40,10 +44,7 @@
 
 .submitBtn{
     border-radius: 5px;
-    bottom: 5%;
-    position: absolute;
-    height: 5%;
-    right: 5%;
+    height: 75%;
     width: 15%;
     float: right;
     -webkit-border-radius: 5px;

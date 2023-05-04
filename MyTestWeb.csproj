@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Betalgo.OpenAI" Version="6.8.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
     <PackageReference Include="System.Threading" Version="4.3.0" />

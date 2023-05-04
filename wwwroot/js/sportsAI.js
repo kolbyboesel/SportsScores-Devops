@@ -3,12 +3,12 @@ const sendMessage = async (message) => {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
-		'Authorization': 'Bearer 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'
+		'Authorization': 'Bearer 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'
 	  },
 	  body: JSON.stringify({
 		model: "text-davinci-003",
 		prompt: `User: ${message}\nAI:`,
-		max_tokens: 400,
+		max_tokens: 1200,
 		temperature: 0.5,
 	  })
 	});

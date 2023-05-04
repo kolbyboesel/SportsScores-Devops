@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
 <script src="~/js/sportsAI.js" asp-append-version="true"></script>
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -20,16 +19,19 @@
 <body style="background-color: beige;">
 
 <header class=" w3-container w3-red w3-center" style="height: 25%; padding-top: 40px;">
-        <h1 class="w3-margin w3-jumbo"
-          style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Sport Scores AI</h1>
+        <h1 class="w3-margin mobileHeader"
+          style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:64px">Sport Scores AI</h1>
+        <h2 class="w3-margin w3-large" style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">-- Only Functional On Localhost Currently --</h2>
         </header>
-	<div class="AIContainer" style="width: 100%;height: 100%; display:inline-block">
+	<div class="AIContainer" style="width: 100vw;height: 75vh; display:inline-block">
 
-   <div class="chatbox mobileChat" id="chatbox"></div>
-    <form id="message-form">
+   <div class="chatbox" id="chatbox"></div>
+   <div class="formContainer">
+    <form id="message-form" style="height: 100%;">
       <input class="textinput" type="text" id="message-input" placeholder="Type your message...">
       <button class="submitBtn" type="submit">Send</button>
     </form>
+    </div>
     </div>
 </body>
 

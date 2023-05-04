@@ -1,6 +1,6 @@
 function showKolbysNBA() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=698726683">Click To View Past Picks</a></div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NBA Bets -- <a href="https://links.pikkit.com/user/kolbyboesel">Click To View Past Picks!</a></div></div>
   <div class="kolbyPicksFullCont">`;
 
  htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
@@ -21,7 +21,7 @@ function showKolbysNBA() {
 
 function showKolbysMLB() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=0">Click To View Past Picks</a></div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's MLB Bets -- <a href="https://links.pikkit.com/user/kolbyboesel">Click To View Past Picks</a></div></div>
   <div class="kolbyPicksFullCont">`;
 
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
@@ -41,7 +41,7 @@ function showKolbysMLB() {
 
 function showKolbysNHL() {
 
-  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets -- <a href="https://docs.google.com/spreadsheets/d/1rz1qH7BAJCdIFsAlwKhCJBKv5SgXSlcmZmICXENyqbQ/edit#gid=195711033">Click To View Past Picks</a></div></div>
+  let htmlSegment = `<div class="bestBetHeader"><div class="headerText">Kolby's NHL Bets -- <a href="https://links.pikkit.com/user/kolbyboesel">Click To View Past Picks</a></div></div>
   <div class="kolbyPicksFullCont">`;
   htmlSegment += `<div class="outerKolbysPicks"><div class="kolbysPicks">
    <div class="pick">
